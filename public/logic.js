@@ -2,9 +2,10 @@
 alert('this works');
 console.log('this would be great if it worked');
 
-var moviesUl = document.getElementById('ul-thing');
+var movieDiv = document.getElementById('movies-container');
 
-
+//let temporary var you can change
+//const constant
 let movies = [
   { title: 'James Bond',
     year: 1992
@@ -24,8 +25,25 @@ let movies = [
 ]
 
 
-document.getElementById('movies-container').innerHTML = 'yo';
+// document.getElementById('movies-container').innerHTML = 'yo';
 
 movies.map(function(each) {
-  moviesUl.appendChild(document.createTextNode('li').innerHTML = 'boo');
+  console.log('each: ', each.title);
+  var textNode = each.title;
+  movieDiv.appendChild(textNode)
+
+//take array 'movies' and bolt .map method onto it -- .getElementById similarly
+//run .map -- gives an argument to use
+//when you call a function, it gives you array
+//each element is an object
 })
+
+// <div class="carousel">
+//    <a class="carousel-item" href="#one!"><img src="https://lorempixel.com/250/250/nature/1"></a>
+//    <a class="carousel-item" href="#two!"><img src="https://lorempixel.com/250/250/nature/2"></a>
+//    <a class="carousel-item" href="#three!"><img src="https://lorempixel.com/250/250/nature/3"></a>
+//    <a class="carousel-item" href="#four!"><img src="https://lorempixel.com/250/250/nature/4"></a>
+//    <a class="carousel-item" href="#five!"><img src="https://lorempixel.com/250/250/nature/5"></a>
+//  </div>
+
+console.log('ended');
