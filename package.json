@@ -1,0 +1,24 @@
+{
+  "name": "cinema_thing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "logic.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Aid19801/cinema.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Aid19801/cinema/issues"
+  },
+  "homepage": "https://github.com/Aid19801/cinema#readme",
+  "dependencies": {
+    "express": "^4.15.4"
+  }
+}
