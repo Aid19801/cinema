@@ -1,0 +1,94 @@
+body {
+    background: -webkit-linear-gradient(left, rgba(200,244,244,1)0%, rgba(244,244,244,0)15%, rgba(244,244,244,0)85%, rgba(244,244,244,1)100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(244,244,244,1)0%, rgba(244,244,244,0)15%, rgba(244,244,244,0)85%, rgba(244,244,244,1)100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(244,244,244,1)0%, rgba(244,244,244,0)15%, rgba(244,244,244,0)85%, rgba(244,244,244,1)100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(200,200,210,1)0%, rgba(255,0,0,0)18%, rgba(255,0,0,0)82%, rgba(200,200,210,1)100%); /* Standard syntax (must be last) */
+}
+
+#footer {
+  position: relative;
+  width: 100%;
+  height: 450px;
+  bottom: 0px;
+  left: 0px;
+  padding-top: 10px;
+  background-color: rgba(244,244,244,1);
+}
+
+#footer-table {
+  margin-left: 15%;
+  width: 70%;
+}
+
+.footer-table-header {
+  height: 30px;
+  font-family: skytextregular, Helvetica, Arial;
+  font-size: 24px;
+  color: rgba(102, 102, 102, 1);
+}
+
+.footer-table-body {
+  height: 30px;
+  font-family: skytextregular, Helvetica, Arial;
+  font-size: 14px;
+  color: rgba(102, 102, 102, 1);
+}
+.footer-table-body a:link {
+  text-decoration: none;
+  color: rgba(102, 102, 102, 1);
+}
+.footer-table-body a:visited {
+  text-decoration: none;
+  color: rgba(102, 102, 102, 1);
+}
+.footer-table-body a:hover {
+  text-decoration: underline;
+  color: rgba(102, 102, 102, 1);
+}
+
+.footer-table-body:link {
+  height: 30px;
+  font-family: skytextregular, Helvetica, Arial;
+  font-size: 14px;
+  text-decoration: none;
+  color: rgba(102, 102, 102, 1);
+}
+.footer-terms-body a:link {
+  text-decoration: none;
+  color: rgba(102, 102, 102, 1);
+}
+.footer-terms-body a:visited {
+  text-decoration: none;
+  color: rgba(102, 102, 102, 1);
+}
+.footer-terms-body a:hover {
+  text-decoration: underline;
+  color: rgba(102, 102, 102, 1);
+}
+
+#horizontal-line{
+  width: 70%;
+}
+
+#footer-terms {
+  margin-left: 15%;
+  width: 50%;
+}
+
+.footer-terms-body {
+  height: 50px;
+  font-family: skytextregular, Helvetica, Arial;
+  font-size: 14px;
+  color: rgba(102, 102, 102, 1);
+}
+
+#sky-logo-sprite {
+  margin-left: 15%;
+  width: 75px;
+}
+
+#copyright {
+  font-family: skytextregular, Helvetica, Arial;
+  font-size: 14px;
+  color: rgba(102, 102, 102, 1);
+}
