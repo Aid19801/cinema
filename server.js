@@ -1,8 +1,7 @@
 var express = require('express');
 var app = express();
-var mysql = require('mysql');
+// var mysql = require('mysql');
 var getDataScript = require('./getData');
-var fubar = getDataScript.getMoviesData();
 
 app.use(express.static(__dirname + '/public'));
 
