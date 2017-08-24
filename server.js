@@ -1,7 +1,7 @@
 var express = require('express');
 var app = express();
 var mysql = require('mysql');
-
+var securityId = require('./getData').securityId;
 let arrayOfProgramData = []
 
 
@@ -12,7 +12,7 @@ const getProgramDataFromDb = () => {
   var con = mysql.createConnection({
     host: "localhost",
     user: "root",
-    password: "T$hompsin12",
+    password: securityId,
     database: "sys"
   });
 
