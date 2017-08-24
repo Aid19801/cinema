@@ -88,3 +88,16 @@ p a:visited {
     position: absolute;
     left: 27%;
 }
+
+#submit-button {
+    border: 1px solid red !important;
+    display: block;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #aeb5bc;
+    color:#f7f7f7;
+    width: 150px;
+    position: absolute;
+    left: 27%;
+}

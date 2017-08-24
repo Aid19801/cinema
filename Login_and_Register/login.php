@@ -18,9 +18,9 @@ if (!$row = mysqli_fetch_assoc($result)) {
     echo "You are now logged in!";
     }
         
-}
+
     
 
-header("location: registerForm.html");
+//header("location: registerForm.html");
     
 ?>

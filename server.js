@@ -25,7 +25,6 @@ var mysql = require('mysql');
 //
 // console.log('arr: ', arr[0]);
 
-<<<<<<< HEAD
 var mysql = require('mysql');
 
 var con = mysql.createConnection({
@@ -63,8 +62,7 @@ con.connect(function(err) {
 // });
 // hep1hOlkOg.s
 //Set the public folder
-=======
->>>>>>> b615126db44c75f34792020c7b030ac2dbd2061c
+
 app.use(express.static(__dirname + '/public'));
 
 app.get('/', function(req, res) {
