@@ -10,7 +10,9 @@ app.get('/', function(req, res) {
 });
 
 app.get('/getdata', function(req, res) {
-  res.send('Working End Point: ' + getDataScript.getMoviesData(req, res).name);
+
+  res.send('Working End Point: ' + getDataScript.getMoviesData(req, res));
+
 })
 
 app.listen(3000);

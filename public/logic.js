@@ -1,4 +1,4 @@
-
+fetch('/getdata').then((x) => x)
 
 $(document).ready(function(){
   movies.map(function(each) {
