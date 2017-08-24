@@ -66,6 +66,21 @@ left: 46%;
 top: 20%;
 }
 
+.video{
+  position: absolute;
+  left: 30%;
+  top: 25%;
+}
+
+
+#videotest::-webkit-media-controls-panel {
+  background-color: rgba(255,255,255,0.5);
+}
+
+
+
+
+
 
   </style>
 
@@ -104,6 +119,32 @@ type="button" data-toggle="dropdown">Username
 <div class="searchbox">
   <input type="text" name="search" placeholder="Search..">
 </div>
+
+<!-- the controls tag automatically adds controls -->
+<div class="video">
+<video id= "videotest" width="420" height="340" controls>
+  <source src="test.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<script>
+// making it pause/play when u click on the video player screen
+//problem -
+$(document).on('click', 'video', function (e) {
+var video = $(this).get(0);
+if (video.paused === false) {
+    video.pause();
+} else {
+    video.play();
+}
+
+return false;
+});
+</script>
+
+
+
 
 
 
