@@ -1,4 +1,4 @@
-import Arr from '../server.js';
+
 
 $(document).ready(function(){
   movies.map(function(each) {
