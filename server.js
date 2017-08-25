@@ -31,7 +31,9 @@ const getProgramDataFromDb = () => {
           synopsis: each.synopsis,
           rating: each.rating,
           certificate: each.certificate,
-          genre: each.genre
+          genre: each.genre,
+          format: each.progFormat,
+          poster: each.posterUrl
         }
 
         arr.push(newProgramObject);

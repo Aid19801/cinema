@@ -1,22 +1,27 @@
-fetch('http://localhost:3000/getdata').then((x) => x.json()
-  .then((y) => {
-    console.log('front end stuff: ', y);
-  }))
+var wrapper = document.getElementById('carouselId');
 
-$(document).ready(function(){
-  movies.map(function(each) {
-    console.log('each: ', each.title);
-    // var textNode = each.title;
-    // movieDiv.appendChild(textNode)
+function populateCarousel() {
+  var moviesArray = [];
 
-  //take array 'movies' and bolt .map method onto it -- .getElementById similarly
-  //run .map -- gives an argument to use
-  //when you call a function, it gives you array
-  //each element is an object
-  })
 
-});
+  fetch('http://localhost:3000/getdata')
+    .then((res) => res.json())
+    .then((json) => {
+      moviesArray = json;
 
-var movieDiv = document.getElementById('movies-container');
+      moviesArray.map((each) => {
 
-console.log('ended');
+        var eachTile = document.createElement("a");
+        var imageForEachTile = document.createElement("img");
+        imageForEachTile.setAttribute('src', each.poster);
+        eachTile.setAttribute("class", "carousel-item thumbnail-item");
+        eachTile.setAttribute("href", "#linkToSomeWhere");
+        eachTile.innerHTML = each.title;
+        eachTile.appendChild(imageForEachTile);
+        wrapper.appendChild(eachTile);
+      })
+      // $my car . update()
+    })
+}
+
+populateCarousel();
