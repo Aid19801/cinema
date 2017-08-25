@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="utf-8">
+<!-- Bootstrap is mobile first - responsive to mobile devices.
+To ensure proper rendering and touch zooming this is important -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- width - this sets the width of the page to follow the screen-width of the device
+initial - this is the zoom level when the page is first loaded  -->
+
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</script>
+</head>
+
+<body>
+
+  <style>
+
+  body {
+
+    font-family: 'Helvetica', 'Arial' sans-serif;
+  }
+
+  .logo {
+    position: absolute;
+    margin-left: 10%;
+    top: 1%;
+
+  }
+
+.dropdown {
+
+position: absolute;
+left: 48%;
+top: 1%;
+}
+
+.dropdownuser {
+
+  position: absolute;
+right:10%;
+top: 1%;
+
+}
+
+.btn-primary-dropdown-toggle-user:hover{
+color: orange;
+
+}
+
+.dropdown-menu:hover {
+color: orange;
+}
+
+.searchbox {
+position: absolute;
+left: 46%;
+top: 20%;
+}
+
+.video{
+  position: absolute;
+  left: 30%;
+  top: 25%;
+}
+
+
+#videotest::-webkit-media-controls-panel {
+  background-color: rgba(255,255,255,0.5);
+}
+
+
+
+
+
+
+  </style>
+
+<div class="logo">
+<img src="cinema.png" alt="Smiley face" height="60" width="170">
+</div>
+
+  <div class="dropdown">
+  <button class="btn-primary-dropdown-toggle"
+  type="button" data-toggle="dropdown">Filter
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu">
+    <li><a href="#">TV</a></li>
+    <li><a href="#">Film</a></li>
+    <li><a href="#">Action & Adventure</a></li>
+        <li><a href="#">Romance</a></li>
+            <li><a href="#">Adventure</a></li>
+                <li><a href="#">Sci-fi</a></li>
+                    <li><a href="#">Kids/Family</a></li>
+                    <li><a href="#">Horror</a></li>
+
+  </ul>
+</div>
+
+<div class="dropdownuser">
+  <img src="user.svg" alt="user" height="42" width="42">
+<button class="btn-primary-dropdown-toggle-user"
+type="button" data-toggle="dropdown">Username
+<span class="caret"></span></button>
+<ul class="dropdown-menu">
+  <li><a href="#">Account Settings</a></li>
+  <li><a href="#">Log Out</a></li>
+</ul>
+</div>
+
+<div class="searchbox">
+  <input type="text" name="search" placeholder="Search..">
+</div>
+
+<!-- the controls tag automatically adds controls -->
+<div class="video">
+<video id= "videotest" width="420" height="340" controls>
+  <source src="test.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+</div>
+
+<script>
+// making it pause/play when u click on the video player screen
+//problem -
+$(document).on('click', 'video', function (e) {
+var video = $(this).get(0);
+if (video.paused === false) {
+    video.pause();
+} else {
+    video.play();
+}
+
+return false;
+});
+</script>
+
+
+
+
+
+
+</body>
+</html>
