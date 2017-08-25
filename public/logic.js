@@ -1,52 +1,27 @@
-$(document).ready(function(){
-  movies.map(function(each) {
-    console.log('each: ', each.title);
-    // var textNode = each.title;
-    // movieDiv.appendChild(textNode)
+var wrapper = document.getElementById('carouselId');
 
-  //take array 'movies' and bolt .map method onto it -- .getElementById similarly
-  //run .map -- gives an argument to use
-  //when you call a function, it gives you array
-  //each element is an object
-  })
-
-});
-
-var movieDiv = document.getElementById('movies-container');
-
-//let temporary var you can change
-//const constant
-let movies = [
-  { title: 'James Bond',
-    year: 1992
-  },
-  { title: 'Justin Bieber LIVE!',
-    year: 2014
-  },
-  { title: 'Terminator 2',
-    year: 1991
-  },
-  { title: 'Spiderman 9',
-    year: 2016
-  },
-  { title: 'When Harry Met Sally',
-    year: 1989
-  }
-]
+function populateCarousel() {
+  var moviesArray = [];
 
 
-// document.getElementById('movies-container').innerHTML = 'yo';
+  fetch('http://localhost:3000/getdata')
+    .then((res) => res.json())
+    .then((json) => {
+      moviesArray = json;
 
-movies.map(function(each) {
-  // var textNode = each.title;
-  // movieDiv.appendChild(textNode)
+      moviesArray.map((each) => {
 
-//take array 'movies' and bolt .map method onto it -- .getElementById similarly
-//run .map -- gives an argument to use
-//when you call a function, it gives you array
-//each element is an object
-})
+        var eachTile = document.createElement("a");
+        var imageForEachTile = document.createElement("img");
+        imageForEachTile.setAttribute('src', each.poster);
+        eachTile.setAttribute("class", "carousel-item thumbnail-item");
+        eachTile.setAttribute("href", "#linkToSomeWhere");
+        eachTile.innerHTML = each.title;
+        eachTile.appendChild(imageForEachTile);
+        wrapper.appendChild(eachTile);
+      })
+      // $my car . update()
+    })
+}
 
-
-
-console.log('ended');
+populateCarousel();
