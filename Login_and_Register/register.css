@@ -22,12 +22,14 @@ li {
 
 li img {
  width: 400px;
+    position: absolute;
+    left: 5%;
 }
 
 
 
 .registerContainer {
-    left: 40%;
+    left: 38%;
     top: 22.5%;
     position: absolute;
     width: 20em;

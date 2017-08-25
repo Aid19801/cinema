@@ -20,6 +20,8 @@ li {
 
 li img {
  width: 400px;
+    position: absolute;
+    left: 5%;
 }
 
 
@@ -90,7 +92,6 @@ p a:visited {
 }
 
 #submit-button {
-    border: 1px solid red !important;
     display: block;
     border: 0px;
     border-radius: 5px;
