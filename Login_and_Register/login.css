@@ -71,6 +71,16 @@ p a:visited {
     color: white;
 }
 
+[type=text] {
+    font-family: sans-serif;
+    color: grey;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+}
+
+
 [type=email] {
     font-family: sans-serif;
     color: grey;
