@@ -1,4 +1,7 @@
-fetch('/getdata').then((x) => x)
+fetch('http://localhost:3000/getdata').then((x) => x.json()
+  .then((y) => {
+    console.log('front end stuff: ', y);
+  }))
 
 $(document).ready(function(){
   movies.map(function(each) {
