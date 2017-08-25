@@ -20,6 +20,7 @@ function populateCarousel() {
       moviesArray = json;
 
 // ===== if NO searchTerm is entered ====
+
       if (typeof searchTerm === 'undefined') {
         moviesArray.map((each) => {
 
@@ -34,20 +35,28 @@ function populateCarousel() {
         })
 
       } else {
+        moviesArray.map((each) => {
+          var st = searchTerm.split('');
+          var mov = each.title.split('')
 
-        /// HERE i'm struggling to use 'searchTerm'
-        // to filter the moviesArray objects
-        // that then populate the carousel.
-
-        function filterResults(arr, st, index) {
-          if (searchTerm matches the charAt(lengthOfSearch - 1)) {
-
+          for (var i = 0; i < st.length; i++) {
+            if (st[i] === mov[i]) {
+              tempResultsArr.push(each)
+            }
           }
-        }
+          })
 
-        // i figured moviesArray.map((each) and then
-        // if each.title charAt(0) matches searchTerm charAt(0)
-        // then do all the appendChild stuff. Thoughts? 
+          tempResultsArr.map((each) => {
+            var eachTile = document.createElement("a");
+            var imageForEachTile = document.createElement("img");
+            imageForEachTile.setAttribute('src', each.poster);
+            eachTile.setAttribute("class", "carousel-item thumbnail-item");
+            eachTile.setAttribute("href", "#linkToSomeWhere");
+            eachTile.innerHTML = each.title;
+            eachTile.appendChild(imageForEachTile);
+            wrapper.appendChild(eachTile);
+        })
+        console.log('shitty: ', tempResultsArr);
       }
 
     })
