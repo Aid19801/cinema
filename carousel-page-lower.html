@@ -1,3 +1,4 @@
+
 <html>
   <head>
     <!-- Import carousel page css -->
@@ -22,9 +23,11 @@
     <!-- <script type="text/javascript" src="logic.js"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 
+<div id="container">
   <div id="page-header" style="height: 250px; border-style: solid;"></div>
   <div id="search-bar" style="position: absolute; width: 250px; height: 25px; left: 50%; margin-left: -125px; top: 275px; border-style: solid;"></div>
-
+  <div id="chevron-lt"><img src="images/dbl_chevron_lt.png"></div>
+  <div id="chevron-rt"><img src="images/dbl_chevron_rt.png"></div>
   <div class="carousel">
     <a class="carousel-item thumbnail-item" href="#one!"><img src="images/Youtube thumbnail.jpg"></a>
     <a class="carousel-item thumbnail-item" href="#two!"><img src="images/Youtube thumbnail.jpg"></a>
@@ -38,14 +41,19 @@
     <a class="carousel-item thumbnail-item" href="#ten!"><img src="images/Youtube thumbnail.jpg"></a>
   </div>
 
+  <div id="show-info-panel">
+more info...
+  </div>
+
+
 
   <!-- movie info panel -->
-  <div id= "moviePanel">
+  <div id= "moviePanel" class="moviePanelClass">
     <h1>The Lego Batman Movie (2017) <img id ="certificate" src = "images/certificateU.jpg" /><span style= "font-size: 16px !important;"> Category: <span id= "category">Movie</span></span></h1>
 
     <div class = "secondline">
       <p>
-         Runtime: <span id= "runtime">104</span>mins &nbsp&nbsp&nbsp Genre: <span id= "genre">Kids & Family</span>
+         Runtime: <span id= "runtime">104</span>mins &nbsp&nbsp&nbsp Genre: <span id= "genre">Kids &amp; Family</span>
          &nbsp <span id= "rating">&#9733	&#9733	&#9733	&#9733 	&#9734</span>
       </p>
     </div>
@@ -59,7 +67,7 @@
       Maybe his superhero sidekick Robin (Michael Cera) and loyal butler Alfred (Ralph Fiennes) can show him a thing or two.
     </p>
   </div>
-
+</div>
 <!-- FOOTER -->
 
     <div id="footer">
