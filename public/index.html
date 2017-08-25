@@ -36,46 +36,52 @@
 
 <div id="container">
   <div id="page-header" style="height: 200px;">
+
   <div class="logo">
     <img src="images/cinema.png" alt="Sky Video On Demand" height="auto" width="350px"><br>
     <span id="logoText">ON DEMAND</span>
   </div>
 
+  <!-- Genre Selection -->
   <div class="dropdown">
-  <button class="btn-primary-dropdown-toggle"
-  type="button" data-toggle="dropdown">Filter Movies &amp; TV
-  <span class="caret"></span></button>
-  <ul class="dropdown-menu">
-    <li><a href="#">TV</a></li>
-    <li><a href="#">Film</a></li>
-    <li><a href="#">Action &amp; Adventure</a></li>
-    <li><a href="#">Romance</a></li>
-    <li><a href="#">Adventure</a></li>
-    <li><a href="#">Sci-fi</a></li>
-    <li><a href="#">Kids/Family</a></li>
-    <li><a href="#">Horror</a></li>
+    <button class="btn-primary-dropdown-toggle"
+    type="button" data-toggle="dropdown">Filter Movies &amp; TV
+    <span class="caret"></span></button>
+    <ul class="dropdown-menu">
+      <li><a href="#">TV</a></li>
+      <li><a href="#">Film</a></li>
+      <li><a href="#">Action &amp; Adventure</a></li>
+      <li><a href="#">Romance</a></li>
+      <li><a href="#">Adventure</a></li>
+      <li><a href="#">Sci-fi</a></li>
+      <li><a href="#">Kids/Family</a></li>
+      <li><a href="#">Horror</a></li>
 
-  </ul>
-</div>
-
-<div class="dropdownuser">
-  <img src="images/user.svg" alt="user" height="42" width="42">
-<button class="btn-primary-dropdown-toggle-user"
-type="button" data-toggle="dropdown">User Options
-<span class="caret"></span></button>
-<ul class="dropdown-menu" id="userDropDownStyle">
-  <li><a href="#">Account Settings</a></li>
-  <li><a href="#">Log Out</a></li>
-</ul>
+    </ul>
   </div>
-</div>
 
-<div id="search-bar" style="position: absolute; width: 250px; height: 25px; left: 50%; margin-left: -150px; top: 200px;">
-<div class="searchbox">
-  <input type="text" id="searchBoxText" name="search" placeholder="Search..">
-</div>
-</div>
+  <!-- User Account Section -->
+  <div class="dropdownuser">
+    <img src="images/user.svg" alt="user" height="42" width="42">
+  <button class="btn-primary-dropdown-toggle-user"
+  type="button" data-toggle="dropdown">User Options
+  <span class="caret"></span></button>
+  <ul class="dropdown-menu" id="userDropDownStyle">
+    <li><a href="#">Account Settings</a></li>
+    <li><a href="#">Log Out</a></li>
+  </ul>
+    </div>
+  </div>
 
+  <!-- ================= SEARCH BAR ================= -->
+  <div id="search-bar" style="position: absolute; width: 250px; height: 25px; left: 50%; margin-left: -150px; top: 200px;">
+    <div class="searchbox">
+      <input type="text" id="searchBoxText" name="search" placeholder="Search..." >
+    </div>
+  </div>
+
+
+  <!-- Carousel Section -->
   <div id="chevron-lt"><img src="images/dbl_chevron_lt.png"></div>
   <div id="chevron-rt"><img src="images/dbl_chevron_rt.png"></div>
 
@@ -84,7 +90,7 @@ type="button" data-toggle="dropdown">User Options
   </div>
 
   <div id="show-info-panel">
-<span id="show-info-panel-text">more info..</span>
+    <span id="show-info-panel-text">more info..</span>
   </div>
 
 
@@ -95,14 +101,14 @@ type="button" data-toggle="dropdown">User Options
 
     <div class = "secondline">
       <p>
-         Runtime: <span id= "runtime">104</span>mins &nbsp&nbsp&nbsp Genre: <span id= "genre">Kids &amp; Family</span>
-         &nbsp <span id= "rating">&#9733	&#9733	&#9733	&#9733 	&#9734</span>
+         Runtime: <span id="runtime">104</span>mins &nbsp&nbsp&nbsp Genre: <span id= "genre">Kids &amp; Family</span>
+         &nbsp <span id="rating">&#9733	&#9733	&#9733	&#9733 	&#9734</span>
       </p>
     </div>
 
-    <p>Director:<span id= "director">Chris McKay</span>
+    <p>Director:<span id="director">Chris McKay</span>
       <br>
-      Starring:  <span id= "leadActor1">Will Arnett</span>, <span id= "leadActor2">Zach Galifianakis</span>
+      Starring:  <span id="leadActor1">Will Arnett</span>, <span id= "leadActor2">Zach Galifianakis</span>
     </p>
     <p id= "synopsis">
       There are big changes brewing in Gotham, but if Batman (Will Arnett) wants to save the city from the Joker's (Zach Galifianakis) hostile takeover, he may have to drop the lone vigilante thing, try to work with others and maybe, just maybe, learn to lighten up.
@@ -182,20 +188,10 @@ type="button" data-toggle="dropdown">User Options
       <a href="https://www.sky.com"><img id="sky-logo-sprite" src="images/sky-sprite.png" alt="Sky"></a>
 <span id="copyright">© 2017 Sky UK</span>
     </div>
-<script type="text/javascript" src="logic.js"></script>
+
+    <script type="text/javascript" src="logic.js"></script>
+
   </body>
 
 
 </html>
-
-
-<!-- <a class="carousel-item thumbnail-item" href="#one!"><img src="images/Youtube thumbnail.jpg"></a>
-<a class="carousel-item thumbnail-item" href="#two!"><img src="images/Youtube thumbnail.jpg"></a>
-<a class="carousel-item thumbnail-item" href="#three!"><img src="images/Youtube thumbnail.jpg"></a>
-<a class="carousel-item thumbnail-item" href="#four!"><img src="images/Youtube thumbnail.jpg"></a>
-<a class="carousel-item thumbnail-item" href="#five!"><img src="images/Youtube thumbnail.jpg"></a>
-<a class="carousel-item thumbnail-item" href="#six!"><img src="images/Youtube thumbnail.jpg"></a>
-<a class="carousel-item thumbnail-item" href="#seven!"><img src="images/Youtube thumbnail.jpg"></a>
-<a class="carousel-item thumbnail-item" href="#eight!"><img src="images/Youtube thumbnail.jpg"></a>
-<a class="carousel-item thumbnail-item" href="#nine!"><img src="images/Youtube thumbnail.jpg"></a>
-<a class="carousel-item thumbnail-item" href="#ten!"><img src="images/Youtube thumbnail.jpg"></a> --> -->
