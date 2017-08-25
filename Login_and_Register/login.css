@@ -1,0 +1,114 @@
+body {
+    background-image: url(darth_vader_armor_star_wars_film_hat_snow_93645_1920x1080.jpg);
+    overflow: hidden;
+    background-repeat: no-repeat;
+}
+
+ul {
+ list-style-type: none;
+ margin:0;
+ padding:0;
+ overflow:hidden;
+ font-size: 1.5em;
+ font-family: sans-serif;
+}
+
+li {
+ float:left;
+
+}
+
+li img {
+ width: 400px;
+    position: absolute;
+    margin-left: 10%;
+    top: 2%;
+}
+
+#logoText {
+ position: absolute;
+ left: 17.5%;
+ top: 7.5%;
+ font-weight: 500;
+ font-size: 24px;
+ line-height: 20px;
+ color: rgb(192, 93, 36);
+}
+
+.loginContainer {
+    color: white;
+    width: 20em;
+    position: absolute;
+    color: white;
+    left: 35%;
+    top: 22.5%;
+}
+
+#loginTitle {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+#regHere {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+}
+
+
+p a:hover {
+    text-decoration: underline;
+}
+
+p a:link {
+    text-decoration: underline;
+    color: white;
+}
+
+p a:visited {
+    color: white;
+}
+
+[type=email] {
+    font-family: sans-serif;
+    color: grey;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+ }
+
+[type=password] {
+    font-family: sans-serif;
+    color: grey;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+}
+
+[type=button]{
+    display: block;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #aeb5bc;
+    color:#f7f7f7;
+    width: 150px;
+    position: absolute;
+    left: 27%;
+}
+
+#submit-button {
+    display: block;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #aeb5bc;
+    color:#f7f7f7;
+    width: 150px;
+    position: absolute;
+    left: 27%;
+}

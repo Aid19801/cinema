@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/Aid19801/cinema#readme",
   "dependencies": {
-    "express": "^4.15.4"
+    "express": "^4.15.4",
+    "mysql": "^2.14.1"
   }
 }
