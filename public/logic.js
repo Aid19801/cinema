@@ -19,8 +19,6 @@ function populateCarousel() {
     .then((json) => {
       moviesArray = json;
 
-// ===== if NO searchTerm is entered ====
-
       if (typeof searchTerm === 'undefined') {
         moviesArray.map((each) => {
 
@@ -35,30 +33,29 @@ function populateCarousel() {
         })
 
       } else {
-        moviesArray.map((each) => {
-          var st = searchTerm.split('');
-          var mov = each.title.split('')
 
-          for (var i = 0; i < st.length; i++) {
-            if (st[i] === mov[i]) {
-              tempResultsArr.push(each)
-            }
-          }
-          })
+        function checkWords(st, arr) {
+            let term = st.toLowerCase();
+            return arr.filter(each => each.title.toLowerCase().indexOf(term) === 0);
+        }
 
-          tempResultsArr.map((each) => {
-            var eachTile = document.createElement("a");
-            var imageForEachTile = document.createElement("img");
-            imageForEachTile.setAttribute('src', each.poster);
-            eachTile.setAttribute("class", "carousel-item thumbnail-item");
-            eachTile.setAttribute("href", "#linkToSomeWhere");
-            eachTile.innerHTML = each.title;
-            eachTile.appendChild(imageForEachTile);
-            wrapper.appendChild(eachTile);
+        let filteredArray = checkWords(searchTerm, moviesArray);
+
+        $('#carouselId').html('');
+
+        filteredArray.map((each) => {
+
+          var eachTile = document.createElement("a");
+          var imageForEachTile = document.createElement("img");
+          imageForEachTile.setAttribute('src', each.poster);
+          eachTile.setAttribute("class", "carousel-item thumbnail-item");
+          eachTile.setAttribute("href", "#linkToSomeWhere");
+          eachTile.innerHTML = each.title;
+          eachTile.appendChild(imageForEachTile);
+          wrapper.appendChild(eachTile);
         })
-        console.log('shitty: ', tempResultsArr);
-      }
 
+      }
     })
 }
 
