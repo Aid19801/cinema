@@ -21,7 +21,7 @@ function populateCarousel() {
 
       if (typeof searchTerm === 'undefined') {
         moviesArray.map((each) => {
-
+          console.log('each: ', each);
           var eachTile = document.createElement("a");
           var imageForEachTile = document.createElement("img");
           imageForEachTile.setAttribute('src', each.poster);

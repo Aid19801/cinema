@@ -57,9 +57,11 @@ app.get('/', function(req, res) {
 });
 
 app.get('/getdata', function(req, res) {
-
   res.send(JSON.stringify(arrayOfProgramData));
+})
 
+app.get('/admin', function (req, res) {
+  res.sendFile(__dirname + '/Login_and_Register/adminControls.html');
 })
 
 app.listen(3000);
