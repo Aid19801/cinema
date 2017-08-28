@@ -14,12 +14,13 @@ $result = mysqli_query($conn,$sql);
 if (mysqli_num_rows($result) == 1) {
     
     echo "You are now logged in!";
+    header("location: adminControls.html");
 }  else {
     echo "Your username or password is incorrect!";
     }
 
 
-header("location: adminControls.html");
+
 //    $AdminUsername = mysqli_fetch_assoc($result);
 //    $name = mysqli_fetch_assoc($result2);
 //    
