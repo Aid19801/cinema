@@ -34,17 +34,27 @@ function populateCarousel() {
 
       } else {
 
+        // as soon as you type, you nuke the existing html.
+        $('#carouselId').html('');
+
+        // function that filters api down to relevant objects/results
         function checkWords(st, arr) {
             let term = st.toLowerCase();
             return arr.filter(each => each.title.toLowerCase().indexOf(term) === 0);
         }
 
+        // place search results in 'filteredArray'
         let filteredArray = checkWords(searchTerm, moviesArray);
 
-        $('#carouselId').html('');
+        // creating a whole new wrapper and carousel component
+        // to replace the nuked one.
+        let newWrapper = document.createElement('div')
+        newWrapper.setAttribute('id', 'carouselId');
+        newWrapper.setAttribute('class', 'carousel');
 
+        // map through the array and create a new image and attribute
+        // tag for each, to append to the carousel wrpaper.
         filteredArray.map((each) => {
-
           var eachTile = document.createElement("a");
           var imageForEachTile = document.createElement("img");
           imageForEachTile.setAttribute('src', each.poster);
@@ -52,8 +62,15 @@ function populateCarousel() {
           eachTile.setAttribute("href", "#linkToSomeWhere");
           eachTile.innerHTML = each.title;
           eachTile.appendChild(imageForEachTile);
-          wrapper.appendChild(eachTile);
+          newWrapper.appendChild(eachTile);
         })
+
+        console.log('newWrapper: ', newWrapper);
+        
+        let testH1 = '<div><h1>I am an h1 tag</h1></div>';
+        $(wrapper).html(testH1);
+
+
 
       }
     })
