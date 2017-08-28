@@ -19,7 +19,6 @@ function populateCarousel() {
     .then((json) => {
       moviesArray = json;
 
-// ===== if NO searchTerm is entered ====
       if (typeof searchTerm === 'undefined') {
         moviesArray.map((each) => {
 
@@ -35,21 +34,44 @@ function populateCarousel() {
 
       } else {
 
-        /// HERE i'm struggling to use 'searchTerm'
-        // to filter the moviesArray objects
-        // that then populate the carousel.
+        // as soon as you type, you nuke the existing html.
+        $('#carouselId').html('');
 
-        function filterResults(arr, st, index) {
-          if (searchTerm matches the charAt(lengthOfSearch - 1)) {
-
-          }
+        // function that filters api down to relevant objects/results
+        function checkWords(st, arr) {
+            let term = st.toLowerCase();
+            return arr.filter(each => each.title.toLowerCase().indexOf(term) === 0);
         }
 
-        // i figured moviesArray.map((each) and then
-        // if each.title charAt(0) matches searchTerm charAt(0)
-        // then do all the appendChild stuff. Thoughts? 
-      }
+        // place search results in 'filteredArray'
+        let filteredArray = checkWords(searchTerm, moviesArray);
 
+        // creating a whole new wrapper and carousel component
+        // to replace the nuked one.
+        let newWrapper = document.createElement('div')
+        newWrapper.setAttribute('id', 'carouselId');
+        newWrapper.setAttribute('class', 'carousel');
+
+        // map through the array and create a new image and attribute
+        // tag for each, to append to the *NEW* carousel wrpaper.
+        filteredArray.map((each) => {
+          var eachTile = document.createElement('a');
+          var imageForEachTile = document.createElement('img');
+          imageForEachTile.setAttribute('src', each.poster);
+          eachTile.setAttribute('class', 'carousel-item thumbnail-item');
+          eachTile.setAttribute('href', '#linkToSomeWhere');
+          eachTile.innerHTML = each.title;
+          eachTile.appendChild(imageForEachTile);
+          newWrapper.appendChild(eachTile);
+        })
+
+        // newWrapper logs out correct info
+        console.log('newWrapper: ', newWrapper);
+        $(wrapper).html(newWrapper);
+        // ^^ html is assigned correctly, inspect-element shows
+        // correct results in place, but no results on screen.
+        $('.carousel').carousel();
+      }
     })
 }
 
