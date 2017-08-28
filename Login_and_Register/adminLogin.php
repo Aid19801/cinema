@@ -1,18 +1,13 @@
 <?php
 
-session_start();
-
 include 'mysql_connect.php';
 
-$Admin_ID = $_POST["admin_ID"];
-$Admin_Password = $_POST["password"];
+$AdminUsername = $_POST["username"];
+$AdminPassword = $_POST["password"];
 
- 
-
-$stmt = $mysqli->prepare("SELECT * FROM myAdmins WHERE id=? AND password=?");
-$stmt->bind_param($Admin_ID, $Admin_Password);
-$stmt->execute();
-
+    
+$sql = "SELECT * FROM myAdmins WHERE username=$AdminUsername AND password=$AdminPassword";
+    
 $result = mysqli_query($conn,$sql);
 
 if (!$row = mysqli_fetch_assoc($result)) {
@@ -21,7 +16,6 @@ if (!$row = mysqli_fetch_assoc($result)) {
     echo "You are now logged in!";
     }
         
-
     
 
 //header("location: registerForm.html");

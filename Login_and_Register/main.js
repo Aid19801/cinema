@@ -9,18 +9,18 @@ function nameCheck() {
             lastName.style.background="rgba(252, 0, 0, 0.7)";
         }
         else if (lastName.value !== ""){
-            lastName.style.background="green";
+            lastName.style.background="rgba(34, 239, 34, 0.7)";
             firstName.style.background="rgba(252, 0, 0, 0.7)";
         }
         else if (firstName.value !== ""){
-            firstName.style.background="green";
+            firstName.style.background="rgba(34, 239, 34, 0.7)";
             lastName.style.background="rgba(252, 0, 0, 0.7)";
         }
     }
     
     else {
-        firstName.style.background="green";
-        lastName.style.background="green";
+        firstName.style.background="rgba(34, 239, 34, 0.7)";
+        lastName.style.background="rgba(34, 239, 34, 0.7)";
     }
 }
 
@@ -42,11 +42,11 @@ function emailCheck() {
         e2.style.background="rgba(252, 0, 0, 0.7)"; 
     }
     else if (eValue === e2Value){
-        e.style.background="green";
-        e2.style.background="green";
+        e.style.background="rgba(34, 239, 34, 0.7)";
+        e2.style.background="rgba(34, 239, 34, 0.7)";
     }
     else {
-        e.style.background="green";
+        e.style.background="rgba(34, 239, 34, 0.7)";
         e2.style.background="rgba(252, 0, 0, 0.7)";  
     }
     
@@ -65,13 +65,13 @@ function CheckP() {
         if (pass1.value.match(passw)) {
             
             if (pass1.value === pass2.value){
-                pass1.style.backgroundColor = "green";
-                pass2.style.backgroundColor = "green";
+                pass1.style.backgroundColor = "#22ef22";
+                pass2.style.backgroundColor = "rgba(34, 239, 34, 0.7)";
                 form.submit();
             }
 
             else if (pass1 !== pass2) {
-                    pass1.style.backgroundColor = "green";
+                    pass1.style.backgroundColor = "rgba(34, 239, 34, 0.7)";
                     pass2.style.backgroundColor = "rgba(252, 0, 0, 0.7)";
 
             }
