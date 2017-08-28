@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="utf-8">
+  <!-- Bootstrap is mobile first - responsive to mobile devices.
+  To ensure proper rendering and touch zooming this is important -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- width - this sets the width of the page to follow the screen-width of the device
+  initial - this is the zoom level when the page is first loaded  -->
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+
+<div id="wrapper" >
+  <style>
+
+  /*the red shape on the left */
+
+#wrapper {
+margin-left: auto;
+margin-right: auto;
+width: 1600px;
+height: 1000px;
+
+}
+.accountshape {
+  position: relative;
+  text-align: left;
+  background-color: red;
+  width: 400px;
+  height: 340px;
+  line-height: 60px;
+  color: Black;
+left: 20%;
+top:15%;
+  font-family: helvetica, arial;
+}
+/*'account details'*/
+#account {
+  position: relative;
+  left: 18%;
+  font-family: helvetica, arial;
+  font-size: 36px;
+}
+/*'full name'*/
+#namebox {
+  position: relative;
+height: 20px;
+width: 250px;
+}
+
+/*'email'*/
+#emailbox {
+  position: relative;
+height: 20px;
+width: 280px;
+}
+
+/*'password'*/
+#pwbox {
+  position: relative;
+height: 20px;
+width: 250px;
+}
+
+/*left - 'save button'*/
+#save {
+
+  position: relative;
+  left: 38%;
+  top: 5%;
+    font-size: 28px;
+      font-family: helvetica, arial;
+}
+
+
+.rightbox{
+  position: relative;
+bottom: 19%;
+  left: 50%;
+  text-align: left;
+  background-color: red;
+  width: 400px;
+  height: 340px;
+  line-height: 60px;
+  color: Black;
+  font-family: helvetica, arial;
+}
+
+/*'subscription'*/
+#sub {
+  position: relative;
+  left: 25%;
+    font-size: 36px;
+      font-family: helvetica, arial;
+}
+
+
+
+/*'£5 a month'*/
+#price {
+  position: relative;
+  left: 33%;
+    font-size: 28px;
+      font-family: helvetica, arial;
+}
+
+/* right - change button*/
+#change {
+  position: absolute;
+  left: 21%;
+  bottom: 4%;
+    font-size: 28px;
+      font-family: helvetica, arial;
+}
+
+#myDiv {
+width: 400px;
+height: 350px;
+background-color: blue;
+}
+
+.popup {
+  position: absolute;
+  top: 20%;
+right: 10%;
+  background-color: grey;
+  width: 650px;
+  height: 640px;
+  line-height: 60px;
+  color: black;
+  font-family: helvetica, arial;
+  font-size: 30px;
+}
+
+#myselect {
+margin-left: 185px;
+margin-top: 60px;
+width: 250px;
+direction: ltr;
+}
+
+#text {
+top: 170px;
+text-align: left;
+color: white;
+font-size: 20px;
+line-height: 25px;
+}
+
+#savechanges {
+top: 170px;
+text-align: left;
+color: black;
+font-size: 20px;
+line-height: 25px;
+}
+
+/*your plan */
+#demo {
+  position: absolute;
+  left: 26%;
+  bottom: 50%;
+  font-size: 32px;
+  font-family: helvetica, arial;
+}
+
+
+.close {
+position: absolute;
+top: 0px;
+right: 0%;
+color: black;
+font-size: 20px;
+font-family: helvetica, arial;
+}
+
+/* cancel subscription */
+.cancelsub {
+  position: absolute;
+  right: 85%;
+  top: 120%;
+    font-size: 28px;
+      font-family: helvetica, arial;
+      line-height: 33px;
+}
+
+  </style>
+
+<!-- //click 'change' and reveals a popup with drop down selection  -->
+   <script>
+  $(document).ready(function() {
+   $('.popup').hide();
+});
+  </script>
+
+  <div class="accountshape">
+    <span id ="account"> Account Details </span>
+    <br>  Full Name: &nbsp; <input type="text" id="namebox" name="fname"><br>
+    Email: &nbsp; <input type="text" id="emailbox" name="email"><br>
+    Password:  &nbsp; <input type="text" id="pwbox" name="pw"><br>
+    <span id="save"> <button type="button" style="height: 65px; width:110px" >Save</button> </span>
+  </div>
+
+  <div class="rightbox">
+  <span id="sub" >  Subscription <br> </span>
+  <span id="demo"> </span>
+<span id="change"> <button type="button" style="height: 65px; width:110px" onclick="showDiv()">Change</button> </span>
+
+<div>
+
+<div class="popup" id="popup">
+<select id="myselect" dir="rtl">
+    <option value="£5 per month" style="height: 55px;">£5 per month</option>
+    <option value="£10 per month">£10 per month</option>
+    <option value="£15 per month">£15 per month</option>
+    <option value="£20 per month">£20 per month</option>
+  </select>
+  <span id="text"> <p> <br><br> £5 per month: receive over 50 TV programs and two film genre packages
+     of your choice <br>
+   <br>  £10 per month: <br>
+   <br> £15 per month: <br>
+   <br> £20 per month: <br> </span>
+  </p>
+  <span id="savechanges"> <button type="button" style="height: 65px; width:110px"
+    onclick="returnoption()">Save Changes</button> </span>
+<button class="close">CLOSE</button>
+</div>
+
+<!-- <div class = "cancelsub" >
+<button type="button" style="height: 130px; width:200px" onclick="dialoguebox()">Cancel Subscription</button>
+</div> -->
+
+<!-- //click on 'change' which brings up the pop up selection to select another plan  -->
+<script>
+function showDiv() {
+    div = document.getElementById('popup');
+    div.style.display = "block";
+}
+</script>
+
+<!-- //once selected an option, click 'save changes' and it will modify what is on the red subscription pane  -->
+<script>
+function returnoption() {
+    var x = document.getElementById("myselect").value;
+    document.getElementById("demo").innerHTML = "" + x;
+}
+</script>
+
+<!-- //the close button, onclick should close the window (hide) -->
+<script>
+$(document).ready(function(){
+    $(".close").click(function(){
+        $(".popup").hide();
+    });
+});
+</script>
+<!--
+<script>
+$(".cancelsub").click(function () {
+  if(confirm("Are you sure you want to remove this?")) {
+    $('div').remove('#demo');
+  }
+});
+</script> -->
+
+
+
+
+
+
+</body>
+</html>
