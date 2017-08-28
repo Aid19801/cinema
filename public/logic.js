@@ -53,25 +53,24 @@ function populateCarousel() {
         newWrapper.setAttribute('class', 'carousel');
 
         // map through the array and create a new image and attribute
-        // tag for each, to append to the carousel wrpaper.
+        // tag for each, to append to the *NEW* carousel wrpaper.
         filteredArray.map((each) => {
-          var eachTile = document.createElement("a");
-          var imageForEachTile = document.createElement("img");
+          var eachTile = document.createElement('a');
+          var imageForEachTile = document.createElement('img');
           imageForEachTile.setAttribute('src', each.poster);
-          eachTile.setAttribute("class", "carousel-item thumbnail-item");
-          eachTile.setAttribute("href", "#linkToSomeWhere");
+          eachTile.setAttribute('class', 'carousel-item thumbnail-item');
+          eachTile.setAttribute('href', '#linkToSomeWhere');
           eachTile.innerHTML = each.title;
           eachTile.appendChild(imageForEachTile);
           newWrapper.appendChild(eachTile);
         })
 
+        // newWrapper logs out correct info
         console.log('newWrapper: ', newWrapper);
-        
-        let testH1 = '<div><h1>I am an h1 tag</h1></div>';
-        $(wrapper).html(testH1);
-
-
-
+        $(wrapper).html(newWrapper);
+        // ^^ html is assigned correctly, inspect-element shows
+        // correct results in place, but no results on screen.
+        $('.carousel').carousel();
       }
     })
 }
