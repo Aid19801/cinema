@@ -21,6 +21,6 @@ if (!$row = mysqli_fetch_assoc($result)) {
 
     
 
-//header("location: registerForm.html");
+header("location: ./carousel-page-lower-ADDING");
     
 ?>
