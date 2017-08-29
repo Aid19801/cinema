@@ -33,7 +33,8 @@ const getProgramDataFromDb = () => {
           certificate: each.certificate,
           genre: each.genre,
           format: each.progFormat,
-          poster: each.posterUrl
+          poster: each.posterUrl,
+          progLink: each.progLink
         }
 
         arr.push(newProgramObject);

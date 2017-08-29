@@ -39,6 +39,7 @@ if (typeof searchTerm === 'undefined') {
     eachTile.setAttribute("data-prog-rating", each.rating);
     eachTile.setAttribute("data-prog-actor", each.lead_actor);
     eachTile.setAttribute("data-prog-synopsis", each.synopsis);
+    eachTile.setAttribute("data-prog-link", each.progLink);
 
 //continuation of carousel population
     eachTile.innerHTML = each.title + "<br>";
@@ -86,6 +87,7 @@ if (typeof searchTerm === 'undefined') {
           eachTile.setAttribute("data-prog-rating", each.rating);
           eachTile.setAttribute("data-prog-actor", each.lead_actor);
           eachTile.setAttribute("data-prog-synopsis", each.synopsis);
+          eachTile.setAttribute("data-prog-link", each.progLink);
 
       //continuation of carousel population
           eachTile.innerHTML = each.title + "<br>";
@@ -121,6 +123,7 @@ function getFocusedInfo() {
   var focusedProgActor = document.getElementsByClassName('carousel-item thumbnail-item active')[0].getAttribute('data-prog-actor');
   var focusedProgSynopsis = document.getElementsByClassName('carousel-item thumbnail-item active')[0].getAttribute('data-prog-synopsis');
   var focusedProgYear = document.getElementsByClassName('carousel-item thumbnail-item active')[0].getAttribute('data-prog-year');
+  var focusedProgLink = document.getElementsByClassName('carousel-item thumbnail-item active')[0].getAttribute('data-prog-link');
 
 //getting certificate image from online based on the certificate assigned in the database
   var focusedProgCertificateIcon = "";
@@ -190,5 +193,6 @@ function getFocusedInfo() {
               'Genre = ' + focusedProgGenre + '\n' +
               'Rating = ' + focusedProgRatingStars + '\n' +
               'Lead Actor = ' + focusedProgActor + '\n' +
-              'Synopsis = ' + focusedProgSynopsis + '\n');
+              'Synopsis = ' + focusedProgSynopsis + '\n' +
+              'Link = ' + focusedProgLink + '\n');
 }
