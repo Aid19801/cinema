@@ -17,6 +17,7 @@ if (mysqli_num_rows($result) == 1) {
     header("location: adminControls.html");
 }  else {
     echo "Your username or password is incorrect!";
+    header("location: loginFail.html");
     }
 
 

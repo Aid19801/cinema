@@ -14,6 +14,7 @@ $result = mysqli_query($conn,$sql);
 
 if (!$row = mysqli_fetch_assoc($result)) {
     echo "Your username or password is incorrect!";
+    header("location: loginFail.html");
 }  else {
     echo "You are now logged in!";
     header("location: ../carousel-page-lower-ADDING.html");

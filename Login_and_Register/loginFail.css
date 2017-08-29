@@ -1,9 +1,36 @@
 body {
-    background-image: url(darth_vader_armor_star_wars_film_hat_snow_93645_1920x1080.jpg);
-    overflow: hidden;
-    background-repeat: no-repeat;
+    background-image: url(failing-entrepreneur.jpg);
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    max-width: 100%;
+    max-height: 100%;
+    margin: auto;
+    overflow: auto;
 }
 
+.branding ul {
+list-style-type: none;
+ margin:0;
+ padding:0;
+ overflow:hidden;
+ font-size: 1.5em;
+ font-family: Sky Text, Helvetica, Ariel;
+}
+
+.branding li {
+    float: left;
+}
+
+.branding li img {
+    width: 400px;
+    position: absolute;
+    margin-left: 10%;
+    top: 2%;
+}
+/*
 ul {
  list-style-type: none;
  margin:0;
@@ -24,62 +51,60 @@ li img {
     margin-left: 10%;
     top: 2%;
 }
+*/
 
-li p {
+
+.Container {
+    color: #464646;
+    width: 47.5em;
     position: absolute;
-    float: right;
-    color: white;
-    display: block;
-    left: 85%;
-    font-size: 15px;
-    top: 2.5%;
-    text-align: right;
+    left: 45%;
+    top: 12.5%;
+     font-family: Sky Text, Helvetica, Ariel;
+
 }
 
-#logoText {
- position: absolute;
- left: 17.5%;
- top: 7.5%;
- font-weight: 500;
- font-size: 24px;
- line-height: 20px;
- color: rgb(192, 93, 36);
-}
-
-.loginContainer {
-    color: white;
-    width: 20em;
-    position: absolute;
-    color: white;
-    left: 35%;
-    top: 22.5%;
-}
-
-#loginTitle {
-    font-family: sans-serif;
-    color: white;
-    text-align: center;
+#Title {
+    font-family: Sky Text, Helvetica, Ariel;
+    color: #464646;
+    font-size: 1.5em;
     text-decoration: underline;
 }
 
-#regHere {
-    font-family: sans-serif;
-    color: white;
-    text-align: center;
+#subTitle {
+    font-weight: bold;
+    font-size: 2.5em;
 }
 
+ol li {
+    list-style-type: none;
+}
 
-p a:hover {
+ol ul li {
+    list-style: circle;
+}
+
+#reason {
+    font-size: 2em;
+}
+#explain {
+    list-style-position: inside;
+}
+#contact {
+    
+}
+
+h2 a:hover {
     text-decoration: underline;
 }
 
-p a:link {
+h2 a:link {
     text-decoration: underline;
-    color: white;
+    color: black;
 }
 
-p a:visited {
-    color: white;
+h2 a:visited {
+    color: black;
 }
 
 [type=text] {
