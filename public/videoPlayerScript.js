@@ -20,13 +20,15 @@ playButton.addEventListener("click", function() {
     video.play();
 
     // Update the button text to 'Pause'
-    playButton.innerHTML = "Pause";
+    playButton.innerHTML = "";
+    playButton.style.backgroundImage = "url('images/pauseSprite.png')";
   } else {
     // Pause the video
     video.pause();
 
     // Update the button text to 'Play'
-    playButton.innerHTML = "Play";
+    playButton.innerHTML = "";
+    playButton.style.backgroundImage = "url('images/playSprite.png')";
   }
 });
 
