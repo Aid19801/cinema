@@ -57,6 +57,7 @@ app.get('/', function(req, res) {
 });
 
 app.get('/getdata', function(req, res) {
+  console.log('============== array: ', arrayOfProgramData);
 
   res.send(JSON.stringify(arrayOfProgramData));
 

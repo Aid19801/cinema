@@ -1,40 +1,110 @@
 var wrapper = document.getElementById('carouselId');
+var searchTerm;
+
+$(document).ready(function($) {
+
+  $('#searchBoxText').on('input', function(e) {
+    searchTerm = e.target.value;
+    populateCarousel();
+    getFocusedInfo();
+  });
+
+});
 
 function populateCarousel() {
   var moviesArray = [];
-
+  var tempResultsArr = [];
 
   fetch('http://localhost:3000/getdata')
     .then((res) => res.json())
     .then((json) => {
       moviesArray = json;
 
-      moviesArray.map((each) => {
-
-        var eachTile = document.createElement("a");
-        var imageForEachTile = document.createElement("img");
-        imageForEachTile.setAttribute('src', each.poster);
-        eachTile.setAttribute("class", "carousel-item thumbnail-item");
-        eachTile.setAttribute("id", each.title);
-        eachTile.setAttribute("href", "#linkToSomeWhere");
+if (typeof searchTerm === 'undefined') {
+  moviesArray.map((each) => {
+    var eachTile = document.createElement("a");
+    var imageForEachTile = document.createElement("img");
+    imageForEachTile.setAttribute('src', each.poster);
+    eachTile.setAttribute("class", "carousel-item thumbnail-item");
+    eachTile.setAttribute("id", each.title);
+    eachTile.setAttribute("href", "#linkToSomeWhere");
 
 //setting custom attributes for populating movieInfoPanel
-        eachTile.setAttribute("data-prog-title", each.title);
-        eachTile.setAttribute("data-prog-cert", each.certificate);
-        eachTile.setAttribute("data-prog-format", each.progFormat);
-        eachTile.setAttribute("data-prog-year", each.year);
-        eachTile.setAttribute("data-prog-runtime", each.length);
-        eachTile.setAttribute("data-prog-genre", each.genre);
-        eachTile.setAttribute("data-prog-rating", each.rating);
-        eachTile.setAttribute("data-prog-actor", each.lead_actor);
-        eachTile.setAttribute("data-prog-synopsis", each.synopsis);
+    eachTile.setAttribute("data-prog-title", each.title);
+    eachTile.setAttribute("data-prog-cert", each.certificate);
+    eachTile.setAttribute("data-prog-format", each.format);
+    eachTile.setAttribute("data-prog-year", each.year);
+    eachTile.setAttribute("data-prog-runtime", each.length);
+    eachTile.setAttribute("data-prog-genre", each.genre);
+    eachTile.setAttribute("data-prog-rating", each.rating);
+    eachTile.setAttribute("data-prog-actor", each.lead_actor);
+    eachTile.setAttribute("data-prog-synopsis", each.synopsis);
 
 //continuation of carousel population
-        eachTile.innerHTML = each.title + "<br>";
-        eachTile.appendChild(imageForEachTile);
-        wrapper.appendChild(eachTile);
-      })
-      // $my car . update()
+    eachTile.innerHTML = each.title + "<br>";
+    eachTile.appendChild(imageForEachTile);
+    wrapper.appendChild(eachTile);
+  })
+} else {
+
+        // as soon as you type, you nuke the existing html.
+        $('#carouselId').html('');
+
+        // function that filters api down to relevant objects/results
+        function checkWords(st, arr) {
+            let term = st.toLowerCase();
+            return arr.filter(each => each.title.toLowerCase().indexOf(term) === 0);
+        }
+
+        // place search results in 'filteredArray'
+        let filteredArray = checkWords(searchTerm, moviesArray);
+
+        // creating a whole new wrapper and carousel component
+        // to replace the nuked one.
+        let newWrapper = document.createElement('div')
+        newWrapper.setAttribute('id', 'carouselId');
+        newWrapper.setAttribute('class', 'carousel');
+
+        // map through the array and create a new image and attribute
+        // tag for each, to append to the *NEW* carousel wrpaper.
+        filteredArray.map((each) => {
+
+          var eachTile = document.createElement("a");
+          var imageForEachTile = document.createElement("img");
+          imageForEachTile.setAttribute('src', each.poster);
+          eachTile.setAttribute("class", "carousel-item thumbnail-item");
+          eachTile.setAttribute("id", each.title);
+          eachTile.setAttribute("href", "#linkToSomeWhere");
+
+      //setting custom attributes for populating movieInfoPanel
+          eachTile.setAttribute("data-prog-title", each.title);
+          eachTile.setAttribute("data-prog-cert", each.certificate);
+          eachTile.setAttribute("data-prog-format", each.format);
+          eachTile.setAttribute("data-prog-year", each.year);
+          eachTile.setAttribute("data-prog-runtime", each.length);
+          eachTile.setAttribute("data-prog-genre", each.genre);
+          eachTile.setAttribute("data-prog-rating", each.rating);
+          eachTile.setAttribute("data-prog-actor", each.lead_actor);
+          eachTile.setAttribute("data-prog-synopsis", each.synopsis);
+
+      //continuation of carousel population
+          eachTile.innerHTML = each.title + "<br>";
+          eachTile.appendChild(imageForEachTile);
+          newWrapper.appendChild(eachTile);
+        })
+
+        // newWrapper logs out correct info
+        console.log('newWrapper: ', newWrapper);
+        $(wrapper).html(newWrapper);
+        // ^^ html is assigned correctly, inspect-element shows
+        // correct results in place, but no results on screen.
+        $('.carousel').carousel();
+        setTimeout(function () {
+            getFocusedInfo();
+        }, 250);
+
+
+      }
     })
 }
 
