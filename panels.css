@@ -1,0 +1,169 @@
+#wrapper {
+margin-left: auto;
+margin-right: auto;
+width: 1600px;
+height: 1000px;
+
+}
+.accountshape {
+  position: relative;
+  text-align: left;
+  background-color: orange;
+  width: 400px;
+  height: 340px;
+  line-height: 60px;
+  color: Black;
+left: 20%;
+top:15%;
+  font-family: Sky Text, helvetica, arial;
+}
+/*'account details'*/
+#account {
+  position: relative;
+  left: 18%;
+  font-family: Sky Text, helvetica, arial;
+  font-size: 36px;
+}
+/*'full name'*/
+#namebox {
+  position: relative;
+height: 20px;
+width: 250px;
+}
+
+/*'email'*/
+#emailbox {
+  position: relative;
+height: 20px;
+width: 280px;
+}
+
+/*'password'*/
+#pwbox {
+  position: relative;
+height: 20px;
+width: 250px;
+}
+
+/*left - 'save button'*/
+#save {
+
+  position: relative;
+  left: 38%;
+  top: 5%;
+    font-size: 28px;
+      font-family: Sky Text, helvetica, arial;
+}
+
+
+.rightbox{
+  position: absolute;
+top: 23.1%;
+  left: 50%;
+  text-align: left;
+  background-color: orange;
+  width: 400px;
+  height: 340px;
+  line-height: 60px;
+  color: Black;
+  font-family: Sky Text, helvetica, arial;
+}
+
+/*'subscription'*/
+#sub {
+  position: relative;
+  left: 25%;
+    font-size: 36px;
+      font-family: Sky Text, helvetica, arial;
+}
+
+
+
+/*'£5 a month'*/
+#price {
+  position: relative;
+  left: 33%;
+    font-size: 28px;
+      font-family: Sky Text, helvetica, arial;
+}
+
+/* right - change button*/
+#change {
+  position: absolute;
+  left: 35%;
+  bottom: 4%;
+    font-size: 28px;
+      font-family: Sky Text, helvetica, arial;
+}
+
+#myDiv {
+width: 400px;
+height: 350px;
+background-color: blue;
+}
+
+.popup {
+  position: absolute;
+  top: 20%;
+right: 30%;
+  background-color: grey;
+  width: 650px;
+  height: 640px;
+  line-height: 60px;
+  color: black;
+  font-family: Sky Text, helvetica, arial;
+  font-size: 30px;
+}
+
+#myselect {
+margin-left: 185px;
+margin-top: 60px;
+width: 250px;
+direction: ltr;
+}
+
+#text {
+top: 170px;
+text-align: left;
+color: white;
+font-size: 20px;
+line-height: 25px;
+}
+
+#savechanges {
+  position: absolute;
+bottom: 20px;
+left: 40%;
+color: black;
+font-size: 20px;
+line-height: 25px;
+}
+
+/*your plan */
+#demo {
+  position: absolute;
+  left: 26%;
+  bottom: 50%;
+  font-size: 32px;
+  font-family: Sky Text, helvetica, arial;
+}
+
+
+.close {
+position: absolute;
+top: 0px;
+right: 0%;
+color: black;
+font-size: 20px;
+font-family: Sky Text, helvetica, arial;
+}
+
+/* cancel subscription */
+.cancelsub {
+  position: absolute;
+  right: 85%;
+  top: 120%;
+    font-size: 28px;
+      font-family: Sky Text, helvetica, arial;
+      line-height: 33px;
+}

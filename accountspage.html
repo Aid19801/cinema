@@ -10,204 +10,55 @@
   initial - this is the zoom level when the page is first loaded  -->
 
   <!-- Latest compiled and minified CSS -->
+
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-
-  <!-- jQuery library -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <!-- Latest compiled JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  </script>
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link rel="stylesheet" type="text/css" href="accountspage.css">
+<link rel="stylesheet" type="text/css" href="panels.css">
+<link rel="stylesheet" type="text/css" href="footer.css">
 
-</head>
 <body>
 
-<div id="wrapper" >
-  <style>
 
-  /*the red shape on the left */
+<!-- THE LOGO  -->
+     <div id="page-header" style="height: 200px;">
+     <div class="logo">
+       <img src="logo.png" alt="Sky Video On Demand" height="auto" width="350px"><br>
+     </div>
 
-#wrapper {
-margin-left: auto;
-margin-right: auto;
-width: 1600px;
-height: 1000px;
-
-}
-.accountshape {
-  position: relative;
-  text-align: left;
-  background-color: red;
-  width: 400px;
-  height: 340px;
-  line-height: 60px;
-  color: Black;
-left: 20%;
-top:15%;
-  font-family: helvetica, arial;
-}
-/*'account details'*/
-#account {
-  position: relative;
-  left: 18%;
-  font-family: helvetica, arial;
-  font-size: 36px;
-}
-/*'full name'*/
-#namebox {
-  position: relative;
-height: 20px;
-width: 250px;
-}
-
-/*'email'*/
-#emailbox {
-  position: relative;
-height: 20px;
-width: 280px;
-}
-
-/*'password'*/
-#pwbox {
-  position: relative;
-height: 20px;
-width: 250px;
-}
-
-/*left - 'save button'*/
-#save {
-
-  position: relative;
-  left: 38%;
-  top: 5%;
-    font-size: 28px;
-      font-family: helvetica, arial;
-}
+<!-- THE FILTER DROP DOWN -->
+     <div class="dropdown">
+     <button class="btn-primary-dropdown-toggle"
+     type="button" data-toggle="dropdown">Filter Movies &amp; TV
+     <span class="caret"></span> </button>
+     <ul class="dropdown-menu">
+       <li><a href="#">TV</a></li>
+       <li><a href="#">Film</a></li>
+       <li><a href="#">Action &amp; Adventure</a></li>
+       <li><a href="#">Romance</a></li>
+       <li><a href="#">Adventure</a></li>
+       <li><a href="#">Sci-fi</a></li>
+       <li><a href="#">Kids/Family</a></li>
+       <li><a href="#">Horror</a></li>
+     </ul>
+    </div>
+  </div>
 
 
-.rightbox{
-  position: relative;
-bottom: 19%;
-  left: 50%;
-  text-align: left;
-  background-color: red;
-  width: 400px;
-  height: 340px;
-  line-height: 60px;
-  color: Black;
-  font-family: helvetica, arial;
-}
+<!-- THE USER DROPDOWN -->
+    <div class="dropdownuser">
+     <img src="user.svg" alt="user" height="42" width="42">
+    <button class="btn-primary-dropdown-toggle-user"
+    type="button" data-toggle="dropdown">User Options<span class="caret"></span></button>
+    <ul class="dropdown-menu" id="userDropDownStyle">
+      <!-- when you log out, it takes you back to the splash page -->
+     <li><a href="#">Log Out</a></li>
+    </ul>
+     </div>
 
-/*'subscription'*/
-#sub {
-  position: relative;
-  left: 25%;
-    font-size: 36px;
-      font-family: helvetica, arial;
-}
-
-
-
-/*'£5 a month'*/
-#price {
-  position: relative;
-  left: 33%;
-    font-size: 28px;
-      font-family: helvetica, arial;
-}
-
-/* right - change button*/
-#change {
-  position: absolute;
-  left: 21%;
-  bottom: 4%;
-    font-size: 28px;
-      font-family: helvetica, arial;
-}
-
-#myDiv {
-width: 400px;
-height: 350px;
-background-color: blue;
-}
-
-.popup {
-  position: absolute;
-  top: 20%;
-right: 10%;
-  background-color: grey;
-  width: 650px;
-  height: 640px;
-  line-height: 60px;
-  color: black;
-  font-family: helvetica, arial;
-  font-size: 30px;
-}
-
-#myselect {
-margin-left: 185px;
-margin-top: 60px;
-width: 250px;
-direction: ltr;
-}
-
-#text {
-top: 170px;
-text-align: left;
-color: white;
-font-size: 20px;
-line-height: 25px;
-}
-
-#savechanges {
-top: 170px;
-text-align: left;
-color: black;
-font-size: 20px;
-line-height: 25px;
-}
-
-/*your plan */
-#demo {
-  position: absolute;
-  left: 26%;
-  bottom: 50%;
-  font-size: 32px;
-  font-family: helvetica, arial;
-}
-
-
-.close {
-position: absolute;
-top: 0px;
-right: 0%;
-color: black;
-font-size: 20px;
-font-family: helvetica, arial;
-}
-
-/* cancel subscription */
-.cancelsub {
-  position: absolute;
-  right: 85%;
-  top: 120%;
-    font-size: 28px;
-      font-family: helvetica, arial;
-      line-height: 33px;
-}
-
-  </style>
-
-<!-- //click 'change' and reveals a popup with drop down selection  -->
-   <script>
-  $(document).ready(function() {
-   $('.popup').hide();
-});
-  </script>
-
+<!-- THE PANELS  -->
   <div class="accountshape">
     <span id ="account"> Account Details </span>
     <br>  Full Name: &nbsp; <input type="text" id="namebox" name="fname"><br>
@@ -220,9 +71,9 @@ font-family: helvetica, arial;
   <span id="sub" >  Subscription <br> </span>
   <span id="demo"> </span>
 <span id="change"> <button type="button" style="height: 65px; width:110px" onclick="showDiv()">Change</button> </span>
+</div>
 
-<div>
-
+<!-- POP UP SUBSCRIPTION BOX  -->
 <div class="popup" id="popup">
 <select id="myselect" dir="rtl">
     <option value="£5 per month" style="height: 55px;">£5 per month</option>
@@ -230,26 +81,32 @@ font-family: helvetica, arial;
     <option value="£15 per month">£15 per month</option>
     <option value="£20 per month">£20 per month</option>
   </select>
-  <span id="text"> <p> <br><br> £5 per month: receive over 50 TV programs and two film genre packages
+  <span id="text"> <p> <br><br> £5 per month: receive over 25 TV programs to watch on demand and <br> two film packages
      of your choice <br>
-   <br>  £10 per month: <br>
-   <br> £15 per month: <br>
-   <br> £20 per month: <br> </span>
+   <br>  £10 per month:  receive over 30 TV programs to watch on demand and <br> three film packages of your choice <br>
+   <br> £15 per month: receive over 35 TV programs to watch on demand and <br> four film packages of your choice <br>
+   <br> £20 per month: receive an unlimited package of TV programs <br> and all film packages</span>
   </p>
   <span id="savechanges"> <button type="button" style="height: 65px; width:110px"
     onclick="returnoption()">Save Changes</button> </span>
 <button class="close">CLOSE</button>
 </div>
 
-<!-- <div class = "cancelsub" >
-<button type="button" style="height: 130px; width:200px" onclick="dialoguebox()">Cancel Subscription</button>
-</div> -->
+<!-- ALL THE FUNCTIONS - FOR THE POP UP BOX AND THE 'CHANGE' BUTTON FOR THE RIGHT BOX  -->
+
+<!-- //click 'change' on right box and reveals a popup with drop down selection  -->
+   <script>
+  $(document).ready(function() {
+   $('.popup').hide();
+});
+  </script>
 
 <!-- //click on 'change' which brings up the pop up selection to select another plan  -->
 <script>
 function showDiv() {
     div = document.getElementById('popup');
     div.style.display = "block";
+
 }
 </script>
 
@@ -269,14 +126,83 @@ $(document).ready(function(){
     });
 });
 </script>
-<!--
-<script>
-$(".cancelsub").click(function () {
-  if(confirm("Are you sure you want to remove this?")) {
-    $('div').remove('#demo');
-  }
-});
-</script> -->
+
+
+
+
+
+<div id="footer">
+
+      <table id="footer-table">
+        <tr>
+          <td class="footer-table-header">Explore Sky</td>
+          <td class="footer-table-header">Sky Initiatives</td>
+          <td class="footer-table-header">Sky Channels</td>
+          <td class="footer-table-header">More Sky Sites</td>
+        </tr>
+        <tr>
+          <td class="footer-table-body"><a href="https://www.skygroup.sky/">Sky Corporate</td>
+          <td class="footer-table-body"><a href="https://www.skygroup.sky/corporate/bigger-picture">Bigger Picture</td>
+          <td class="footer-table-body"><a href="http://www.sky.com/watch/channel/sky-1">Sky 1</td>
+          <td class="footer-table-body"><a href="http://www.nowtv.com">Now TV</td>
+        </tr>
+        <tr>
+          <td class="footer-table-body"><a href="http://business.sky.com">Sky For Businesses</td>
+          <td class="footer-table-body"><a href="https://skyoceanrescue.com/">Sky Ocean Rescue</td>
+          <td class="footer-table-body"><a href="http://www.sky.com/watch/channel/sky-living">Sky Living</td>
+          <td class="footer-table-body"><a href="http://www.skyprotect.com/">Sky Protect</td>
+        </tr>
+        <tr>
+          <td class="footer-table-body"><a href="http://communaltv.sky.com/">Sky Communal TV</td>
+          <td class="footer-table-body"><a href="https://www.skyacademy.com/">Sky Academy</td>
+          <td class="footer-table-body"><a href="http://www.sky.com/watch/channel/sky-atlantic">Sky Atlantic</td>
+          <td class="footer-table-body"></td>
+        </tr>
+        <tr>
+          <td class="footer-table-body"><a href="http://www.sky.com/shop/store-locator/">Store Locator</td>
+          <td class="footer-table-body"><a href="http://www.workforsky.com/earlycareers">Sky Early Careers</td>
+          <td class="footer-table-body"><a href="http://www.sky.com/watch/channel/sky-arts">Sky Arts</td>
+          <td class="footer-table-body"></td>
+        </tr>
+        <tr>
+          <td class="footer-table-body"><a href="https://careers.sky.com/">Work For Sky</td>
+          <td class="footer-table-body"></td>
+          <td class="footer-table-body"><a href="http://www.sky.com/watch/channel/sky-cinema">Sky Cinema</td>
+          <td class="footer-table-body"></td>
+        </tr>
+        <tr>
+          <td class="footer-table-body"><a href="http://www.sky.com/products/broadband-talk/sky-broadband-shield/safety-centre">Safety Centre</td>
+          <td class="footer-table-body"></td>
+          <td class="footer-table-body"><a href="http://www.skysports.com/">Sky Sports</td>
+          <td class="footer-table-body"></td>
+        </tr>
+        <tr>
+          <td class="footer-table-body"><a href="http://www.skymedia.co.uk">Advertise With Us</td>
+          <td class="footer-table-body"></td>
+          <td class="footer-table-body"><a href="http://news.sky.com/">Sky News</td>
+          <td class="footer-table-body"></td>
+        </tr>
+        <tr>
+          <td class="footer-table-body"></td>
+        </tr>
+      </table>
+<hr id="horizontal-line">
+      <table id="footer-terms">
+        <tr>
+          <td class="footer-terms-body"><a href="http://www.sky.com/shop/terms-conditions/new/">Terms &amp; Conditions</td>
+          <td class="footer-terms-body"><a href="http://help.sky.com/security/privacy/privacy-and-cookies-notice/">Privacy &amp; Cookies Notice</td>
+          <td class="footer-terms-body"><a href="http://accessibility.sky.com">Accessibility Information</td>
+          <td class="footer-terms-body"><a href="http://contactus.sky.com">Contact Us</td>
+          <td class="footer-terms-body"><a href="http://www.sky.com/sitemap">Site Map</td>
+          <td class="footer-terms-body">Go To Ireland Site</td>
+        </tr>
+      </table>
+
+      <a href="https://www.sky.com"><img id="sky-logo-sprite" src="images/sky-sprite.png" alt="Sky"></a>
+<span id="copyright">© 2017 Sky UK</span>
+    </div>
+
+
 
 
 
