@@ -67,18 +67,15 @@ function populateTable() {
         var genre = document.getElementById('genre');
         var leadActor = document.getElementById('lead-actor');
 
+
         for (var i in data) {
           let progrId = program * 1;
 
           if (data[i].id === progrId) {
             console.log(data[i].title);
-            // fetch the URL
-            // use the ID to POST new info.
-            // 
-            fetch()
+
           }
         }
-
       })
 
     })
