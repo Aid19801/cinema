@@ -58,15 +58,16 @@ function populateTable() {
         let program = sibs[0].innerHTML;
 
         // getting the modal elements
-        var title = document.getElementById('modal-title');
+        var title = document.getElementById('title');
         var synopsis = document.getElementById('synopsis');
         var year = document.getElementById('year');
         var rating = document.getElementById('rating');
+        var length = document.getElementById('length');
         var cert = document.getElementById('certificate');
         var poster = document.getElementById('poster');
         var format = document.getElementById('format');
         var genre = document.getElementById('genre');
-        var leadActor = document.getElementById('lead-actor');
+        var leadActor = document.getElementById('lead_actor');
 
         // loop through api 'data' and if the sibling/ID matches
         // change the value in the modal to the api data also
@@ -74,11 +75,14 @@ function populateTable() {
         // MySQL.
 
         for (var i in data) {
+          console.log('data: ', data[i]);
           let progrId = program * 1;
           if (data[i].id === progrId) {
+            title.value = data[i].title;
             movieProgID.value = progrId;
             synopsis.value = data[i].synopsis;
             year.value = data[i].year;
+            length.value = data[i].length;
             cert.value = data[i].certificate;
             rating.value = data[i].rating;
             poster.value = data[i].poster;

@@ -16,6 +16,7 @@
 #synopsis {
   width: 50vw;
   height: 25vh;
+  word-wrap: break-word;
 }
 ul {
  list-style-type: none;
