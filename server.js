@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
-
+console.log('loaded');
 var securityId = require('./getData').securityId;
 let arrayOfProgramData = []
 
@@ -122,6 +122,10 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
+// app.get('/images/', function(req, res) {
+//     res.sendFile(path.join(__dirname, 'public/posters/'));
+// });
+
 app.get('/getdata', function(req, res) {
   res.send(JSON.stringify(arrayOfProgramData));
 })
@@ -138,7 +142,7 @@ app.post('/admin', function (req, res) {
     arrayOfProgramData = result;
     return arrayOfProgramData;
   })
-  
+
   res.sendFile(__dirname + '/adminControls.html');
 });
 

@@ -3,6 +3,7 @@ var searchTerm;
 
 $(document).ready(function($) {
 
+
   $('#searchBoxText').on('input', function(e) {
     searchTerm = e.target.value;
     populateCarousel();
@@ -45,6 +46,7 @@ if (typeof searchTerm === 'undefined') {
     eachTile.appendChild(imageForEachTile);
     wrapper.appendChild(eachTile);
   })
+
 } else {
 
         // as soon as you type, you nuke the existing html.
@@ -94,7 +96,7 @@ if (typeof searchTerm === 'undefined') {
         })
 
         // newWrapper logs out correct info
-        console.log('newWrapper: ', newWrapper);
+
         $(wrapper).html(newWrapper);
         // ^^ html is assigned correctly, inspect-element shows
         // correct results in place, but no results on screen.
