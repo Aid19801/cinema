@@ -1,8 +1,6 @@
 var wrapper = document.getElementById('carouselId');
 var searchTerm;
-
 $(document).ready(function($) {
-
 
   $('#searchBoxText').on('input', function(e) {
     searchTerm = e.target.value;
@@ -10,25 +8,31 @@ $(document).ready(function($) {
     getFocusedInfo();
   });
 
+  $('a .carousel-item').click(function(event) {
+    // event.preventDefault();
+    console.log('prevented click');
+});
 });
 
 function populateCarousel() {
   var moviesArray = [];
   var tempResultsArr = [];
-
   fetch('http://localhost:3000/getdata')
     .then((res) => res.json())
     .then((json) => {
       moviesArray = json;
-
 if (typeof searchTerm === 'undefined') {
   moviesArray.map((each) => {
     var eachTile = document.createElement("a");
+    var playButton = document.createElement("div");
+    playButton.setAttribute("id", "playOverlay");
+    playButton.setAttribute("class", "playButt");
+
     var imageForEachTile = document.createElement("img");
     imageForEachTile.setAttribute('src', each.poster);
     eachTile.setAttribute("class", "carousel-item thumbnail-item");
     eachTile.setAttribute("id", each.title);
-    eachTile.setAttribute("href", "#linkToSomeWhere");
+    eachTile.setAttribute("href", "javascript:void(0)");
 
 //setting custom attributes for populating movieInfoPanel
     eachTile.setAttribute("data-prog-title", each.title);
@@ -40,44 +44,42 @@ if (typeof searchTerm === 'undefined') {
     eachTile.setAttribute("data-prog-rating", each.rating);
     eachTile.setAttribute("data-prog-actor", each.lead_actor);
     eachTile.setAttribute("data-prog-synopsis", each.synopsis);
-
+    eachTile.setAttribute("data-prog-link", each.progLink);
 //continuation of carousel population
     eachTile.innerHTML = each.title + "<br>";
     eachTile.appendChild(imageForEachTile);
+    eachTile.appendChild(playButton);
     wrapper.appendChild(eachTile);
   })
 
 } else {
-
         // as soon as you type, you nuke the existing html.
         $('#carouselId').html('');
-
         // function that filters api down to relevant objects/results
         function checkWords(st, arr) {
             let term = st.toLowerCase();
             return arr.filter(each => each.title.toLowerCase().indexOf(term) === 0);
         }
-
         // place search results in 'filteredArray'
         let filteredArray = checkWords(searchTerm, moviesArray);
-
         // creating a whole new wrapper and carousel component
         // to replace the nuked one.
         let newWrapper = document.createElement('div')
         newWrapper.setAttribute('id', 'carouselId');
         newWrapper.setAttribute('class', 'carousel');
-
         // map through the array and create a new image and attribute
         // tag for each, to append to the *NEW* carousel wrpaper.
         filteredArray.map((each) => {
-
           var eachTile = document.createElement("a");
           var imageForEachTile = document.createElement("img");
+          var playButton = document.createElement("div");
+          playButton.setAttribute("id", "playOverlay");
+          playButton.setAttribute("class", "playButt");
+          
           imageForEachTile.setAttribute('src', each.poster);
           eachTile.setAttribute("class", "carousel-item thumbnail-item");
           eachTile.setAttribute("id", each.title);
-          eachTile.setAttribute("href", "#linkToSomeWhere");
-
+          eachTile.setAttribute("href", "javascript:void(0)");
       //setting custom attributes for populating movieInfoPanel
           eachTile.setAttribute("data-prog-title", each.title);
           eachTile.setAttribute("data-prog-cert", each.certificate);
@@ -88,13 +90,13 @@ if (typeof searchTerm === 'undefined') {
           eachTile.setAttribute("data-prog-rating", each.rating);
           eachTile.setAttribute("data-prog-actor", each.lead_actor);
           eachTile.setAttribute("data-prog-synopsis", each.synopsis);
-
+          eachTile.setAttribute("data-prog-link", each.progLink);
       //continuation of carousel population
           eachTile.innerHTML = each.title + "<br>";
           eachTile.appendChild(imageForEachTile);
+          imageForEachTile.appendChild(playButton);
           newWrapper.appendChild(eachTile);
         })
-
         // newWrapper logs out correct info
 
         $(wrapper).html(newWrapper);
@@ -104,14 +106,10 @@ if (typeof searchTerm === 'undefined') {
         setTimeout(function () {
             getFocusedInfo();
         }, 250);
-
-
       }
     })
 }
-
 populateCarousel();
-
 function getFocusedInfo() {
 //getting the content of newly assigned custom attributes and storing as variable to pass to movieInfoPanel
   var focusedProgTitle = document.getElementsByClassName('carousel-item thumbnail-item active')[0].getAttribute('data-prog-title');
@@ -123,10 +121,9 @@ function getFocusedInfo() {
   var focusedProgActor = document.getElementsByClassName('carousel-item thumbnail-item active')[0].getAttribute('data-prog-actor');
   var focusedProgSynopsis = document.getElementsByClassName('carousel-item thumbnail-item active')[0].getAttribute('data-prog-synopsis');
   var focusedProgYear = document.getElementsByClassName('carousel-item thumbnail-item active')[0].getAttribute('data-prog-year');
-
+  var focusedProgLink = document.getElementsByClassName('carousel-item thumbnail-item active')[0].getAttribute('data-prog-link');
 //getting certificate image from online based on the certificate assigned in the database
   var focusedProgCertificateIcon = "";
-
   if (focusedProgCertificate == "U") {
     focusedProgCertificateIcon = "https://jaybullimore98.files.wordpress.com/2014/12/universal.png";
   } else if (focusedProgCertificate == "PG") {
@@ -138,10 +135,8 @@ function getFocusedInfo() {
   } else if (focusedProgCertificate == "18") {
     focusedProgCertificateIcon = "https://upload.wikimedia.org/wikipedia/en/thumb/9/9f/BBFC_18.svg/1200px-BBFC_18.svg.png";
   }
-
 // converting numerical rating system into stars
   var focusedProgRatingStars
-
   if (focusedProgRating == "1") {
     focusedProgRatingStars = "&#9733 &#9734 &#9734 &#9734 &#9734";
   } else if (focusedProgRating == "2") {
@@ -153,16 +148,13 @@ function getFocusedInfo() {
   } else if (focusedProgRating == "5") {
     focusedProgRatingStars = "&#9733 &#9733 &#9733 &#9733 &#9733";
   }
-
 // getting category to show
   var focusedProgFormatConverted
-
   if (focusedProgFormat == "Movie") {
     focusedProgFormatConverted = "Movies";
   } else if (focusedProgFormat == "TV") {
     focusedProgFormatConverted = "TV Show";
   }
-
 //assigning movieInfoPanel tags to variables for passing above attributes to
   var infoPanelTitle = document.getElementById('moviePanelTitle');
   var infoPanelFormat = document.getElementById('category');
@@ -173,7 +165,6 @@ function getFocusedInfo() {
   var infoPanelActor = document.getElementById('leadActor1');
   var infoPanelSynopsis = document.getElementById('synopsis');
   var infoPanelCertificate = document.getElementById('certificate');
-
   infoPanelTitle.innerText = focusedProgTitle;
   infoPanelFormat.innerText = focusedProgFormatConverted;
   infoPanelYear.innerText = focusedProgYear;
@@ -183,7 +174,6 @@ function getFocusedInfo() {
   infoPanelActor.innerText = focusedProgActor;
   infoPanelSynopsis.innerText = focusedProgSynopsis;
   infoPanelCertificate.src = focusedProgCertificateIcon;
-
   //  ('Guardians of the Galaxy Vol. 2').getAttribute('href');
   console.log('Title = ' + focusedProgTitle + '\n' +
               'Certificate = ' + focusedProgCertificateIcon + '\n' +
@@ -192,5 +182,6 @@ function getFocusedInfo() {
               'Genre = ' + focusedProgGenre + '\n' +
               'Rating = ' + focusedProgRatingStars + '\n' +
               'Lead Actor = ' + focusedProgActor + '\n' +
+              'prog Link = ' + focusedProgLink + '\n' +
               'Synopsis = ' + focusedProgSynopsis + '\n');
 }
