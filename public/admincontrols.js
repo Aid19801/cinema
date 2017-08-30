@@ -52,6 +52,7 @@ function populateTable() {
       // get the ID of the movie to edit
       $('.edit-prog').on('click', function(e) {
 
+        // get the sibling object/information from neighbouring fields/ID/Name etc
         let btn = e.target;
         let sibs = $(btn).siblings();
         let program = sibs[0].innerHTML;
@@ -67,13 +68,23 @@ function populateTable() {
         var genre = document.getElementById('genre');
         var leadActor = document.getElementById('lead-actor');
 
+        // loop through api 'data' and if the sibling/ID matches
+        // change the value in the modal to the api data also
+        // this lets us edit the information and submit/post it to
+        // MySQL.
 
         for (var i in data) {
           let progrId = program * 1;
-
           if (data[i].id === progrId) {
-            console.log(data[i].title);
-
+            movieProgID.value = progrId;
+            synopsis.value = data[i].synopsis;
+            year.value = data[i].year;
+            cert.value = data[i].certificate;
+            rating.value = data[i].rating;
+            poster.value = data[i].poster;
+            format.value = data[i].format;
+            genre.value = data[i].genre;
+            leadActor.value = data[i].lead_actor;
           }
         }
       })

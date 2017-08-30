@@ -2,6 +2,9 @@
   padding-left: 0vw;
 }
 
+.modal-dialog {
+  border: 3px solid rgba(0, 0, 0, 0.6);
+}
 .modalBodyParagraph {
   border: 1px solid red;
 }
@@ -10,6 +13,10 @@
   padding-left: 3vw;
 }
 
+#synopsis {
+  width: 50vw;
+  height: 25vh;
+}
 ul {
  list-style-type: none;
  margin:0;

@@ -23,6 +23,11 @@ $(document).ready(function(){
 
       $( "#show-info-panel" ).click(function() {
         $( ".moviePanelClass" ).slideToggle( "slow" );
+        getFocusedInfo();
       });
+
+      // $("#carouselId").click(function() {
+      //   $(".moviePanelClass").slideUp();
+      // });
 
     });

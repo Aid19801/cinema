@@ -89,7 +89,7 @@
   <div id="chevron-lt"><img src="images/dbl_chevron_lt.png"></div>
   <div id="chevron-rt"><img src="images/dbl_chevron_rt.png"></div>
 
-  <div id="carouselId" class="carousel">
+  <div id="carouselId" class="carousel" onclick="setTimeout(getFocusedInfo, 1600)">
       <!-- ========= put carousel items here ========= -->
   </div>
 
@@ -101,25 +101,25 @@
 
   <!-- movie info panel -->
   <div id= "moviePanel" class="moviePanelClass">
-    <h1>The Lego Batman Movie (2017) <img id ="certificate" src = "images/certificateU.jpg" /><span style= "font-size: 16px !important;"> Category: <span id= "category">Movie</span></span></h1>
+    <h1><span id="moviePanelTitle"></span><img id ="certificate" src = "images/certificateU.jpg" /></h1><span style= "font-size: 14px !important;">Year: <span id="year"></span><br><br>
+Category: <span id= "category"></span></span><br><br>
 
     <div class = "secondline">
       <p>
-         Runtime: <span id="runtime">104</span>mins &nbsp&nbsp&nbsp Genre: <span id= "genre">Kids &amp; Family</span>
-         &nbsp <span id="rating">&#9733	&#9733	&#9733	&#9733 	&#9734</span>
+         Runtime: <span id="runtime"></span>mins &nbsp&nbsp&nbsp Genre: <span id= "genre"></span>
+         &nbsp <span id="rating"></span>
       </p>
     </div>
 
-    <p>Director:<span id="director">Chris McKay</span>
-      <br>
-      Starring:  <span id="leadActor1">Will Arnett</span>, <span id= "leadActor2">Zach Galifianakis</span>
+      Starring:  <span id= "leadActor1"></span>
+
     </p>
     <p id= "synopsis">
-      There are big changes brewing in Gotham, but if Batman (Will Arnett) wants to save the city from the Joker's (Zach Galifianakis) hostile takeover, he may have to drop the lone vigilante thing, try to work with others and maybe, just maybe, learn to lighten up.
-      Maybe his superhero sidekick Robin (Michael Cera) and loyal butler Alfred (Ralph Fiennes) can show him a thing or two.
     </p>
   </div>
 </div>
+
+
 <!-- FOOTER -->
 
     <!-- <div id="footer">
