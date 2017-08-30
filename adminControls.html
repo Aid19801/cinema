@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Admin Controls</title><!-- Latest compiled and minified CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+      <!-- jQuery library -->
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+      <!-- Latest compiled JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <link rel="stylesheet" href="adminControls.css">
+
+    </head>
+
+    <body>
+        <!-- <ul>
+           <li><a href="index.html"><img src="skycinema.png" href="index.html"></a></li>
+        </ul> -->
+        <br>
+        <br>
+<div class="jumbotron">
+  <h4>Edit Existing Catalogue</h4>
+  <div id="sql-view-table" class="container">
+
+    <table id="movies-table">
+      <tr>
+        <th>id</th>
+        <th>Movie Title</th>
+        <th>Year</th>
+        <th>Edit?</th>
+      </tr>
+    </table>
+    <button type="button" class="btn btn-info" id="btnLog" data-toggle="modal" data-target="#myModal">CLICK ME</button>
+
+    <button type="button" class="btn btn-info" id="btnLog" data-toggle="modal" data-target="#myModal">Edit</button>
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+
+
+
+<form method="POST" action="/admin">
+
+  <div class="modal-dialog">
+      <div class="modal-content">
+          <div class="modal-header">
+
+            <h4 id="modal-title" class="modal-title">Update Info:</h4>
+            <input id="title" name="title" placeholder="title" />
+            <input id="movieProgID" name="movieProgID" placeholder="movieProgID" />
+            <input id="synopsis" name="synopsis" placeholder="synopsis" />
+            <input id="length" name="length" placeholder="length" />
+            <input id="certificate" name="certificate" placeholder="certificate" />
+            <input id="rating" name="rating" placeholder="rating" />
+            <input id="poster" name="poster" placeholder="poster URL" />
+            <input id="format" name="format" placeholder="TV or Movie?" />
+            <input id="genre" name="genre" placeholder="genre" />
+            <input id="lead_actor" name="lead_actor" placeholder="lead-actor" />
+            <input id="year" name="year" placeholder="year" />
+
+
+            <br><br>
+            <input type="submit" value="Submit">
+
+      </div>
+    </div>
+  </div>
+
+</form>
+
+
+
+
+      </div>
+  </div>
+</div>
+
+<div class="jumbotron">
+  <h4>Add New Content</h4>
+  <div id="sql-edit-table" class="container">
+    adding new content here / fields and stuff.
+  </div>
+</div>
+
+
+    <script type="text/javascript" src="admincontrols.js"></script>
+    </body>
+
+</html>

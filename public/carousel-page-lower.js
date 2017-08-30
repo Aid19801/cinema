@@ -39,15 +39,15 @@ $(document).ready(function(){
       $("#playOverlay").show();
     });
 
-     $("#playOverlay").click(function(){
+     $(".playButt").click(() => {
+
        var videoLinkForPlayer = $('.active')[0].getAttribute('data-prog-link');
+       console.log('vidLink? : ', videoLinkForPlayer);
 
        $('#video-player').attr('src', 'videos/' + videoLinkForPlayer);
-
+       
        $('#videoModalContainer').show();
-       $('#video-player').load();
-
-
+      //  $('#video-player').load();
 
 
 

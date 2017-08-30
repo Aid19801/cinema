@@ -1,12 +1,19 @@
 var wrapper = document.getElementById('carouselId');
 var searchTerm;
 $(document).ready(function($) {
+
   $('#searchBoxText').on('input', function(e) {
     searchTerm = e.target.value;
     populateCarousel();
     getFocusedInfo();
   });
+
+  $('a .carousel-item').click(function(event) {
+    // event.preventDefault();
+    console.log('prevented click');
 });
+});
+
 function populateCarousel() {
   var moviesArray = [];
   var tempResultsArr = [];
@@ -17,11 +24,16 @@ function populateCarousel() {
 if (typeof searchTerm === 'undefined') {
   moviesArray.map((each) => {
     var eachTile = document.createElement("a");
+    var playButton = document.createElement("div");
+    playButton.setAttribute("id", "playOverlay");
+    playButton.setAttribute("class", "playButt");
+
     var imageForEachTile = document.createElement("img");
     imageForEachTile.setAttribute('src', each.poster);
     eachTile.setAttribute("class", "carousel-item thumbnail-item");
     eachTile.setAttribute("id", each.title);
     eachTile.setAttribute("href", "javascript:void(0)");
+
 //setting custom attributes for populating movieInfoPanel
     eachTile.setAttribute("data-prog-title", each.title);
     eachTile.setAttribute("data-prog-cert", each.certificate);
@@ -36,8 +48,10 @@ if (typeof searchTerm === 'undefined') {
 //continuation of carousel population
     eachTile.innerHTML = each.title + "<br>";
     eachTile.appendChild(imageForEachTile);
+    eachTile.appendChild(playButton);
     wrapper.appendChild(eachTile);
   })
+
 } else {
         // as soon as you type, you nuke the existing html.
         $('#carouselId').html('');
@@ -58,6 +72,10 @@ if (typeof searchTerm === 'undefined') {
         filteredArray.map((each) => {
           var eachTile = document.createElement("a");
           var imageForEachTile = document.createElement("img");
+          var playButton = document.createElement("div");
+          playButton.setAttribute("id", "playOverlay");
+          playButton.setAttribute("class", "playButt");
+          
           imageForEachTile.setAttribute('src', each.poster);
           eachTile.setAttribute("class", "carousel-item thumbnail-item");
           eachTile.setAttribute("id", each.title);
@@ -76,10 +94,11 @@ if (typeof searchTerm === 'undefined') {
       //continuation of carousel population
           eachTile.innerHTML = each.title + "<br>";
           eachTile.appendChild(imageForEachTile);
+          imageForEachTile.appendChild(playButton);
           newWrapper.appendChild(eachTile);
         })
         // newWrapper logs out correct info
-        console.log('newWrapper: ', newWrapper);
+
         $(wrapper).html(newWrapper);
         // ^^ html is assigned correctly, inspect-element shows
         // correct results in place, but no results on screen.

@@ -11,10 +11,6 @@ body {
     background: linear-gradient(to right, rgba(200,200,210,1)0%, rgba(255,0,0,0)18%, rgba(255,0,0,0)82%, rgba(200,200,210,1)100%); /* Standard syntax (must be last) */
 }
 
-#container{
-
-}
-
 #footer {
   position: absolute;
   top: 120%;
@@ -122,6 +118,9 @@ body {
   height: 500px !important;
 }
 
+.carousel-item {
+  cursor: default;
+}
 .carousel .carousel-item>img{
   width: auto !important;
   max-height: 350px !important;
@@ -361,19 +360,19 @@ width: 300px;
 }
 
 #playOverlay {
-  position: absolute;
+  position: inherit;
   width: 400px;
   height: 300px;
-  background-color: red;
+  background-color: rgba(0, 0, 0, 0);
   top: 50%;
   left: 50%;
   margin-left: -200px;
   padding-left: 50px;
-  margin-top: -150px;
+  margin-top: -58px;
   z-index: 31;
   opacity: 0.7;
   background-image: url('images/circlePlaySprite.png');
-  background-size: 200px 200px;
+  background-size: 100px 100px;
   background-repeat: no-repeat;
   background-position: center;
 }
