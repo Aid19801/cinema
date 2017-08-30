@@ -1,0 +1,61 @@
+
+body {
+
+    font-family: Sky Text, Helvetica, Arial;
+    background: -webkit-linear-gradient(left, rgba(200,244,244,1)0%, rgba(244,244,244,0)15%, rgba(244,244,244,0)85%, rgba(244,244,244,1)100%); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(right, rgba(244,244,244,1)0%, rgba(244,244,244,0)15%, rgba(244,244,244,0)85%, rgba(244,244,244,1)100%); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(right, rgba(244,244,244,1)0%, rgba(244,244,244,0)15%, rgba(244,244,244,0)85%, rgba(244,244,244,1)100%); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to right, rgba(200,200,210,1)0%, rgba(255,0,0,0)18%, rgba(255,0,0,0)82%, rgba(200,200,210,1)100%); /* Standard syntax (must be last) */
+}
+
+.logo {
+ position: absolute;
+ margin-left: 10%;
+ top: 2%;
+}
+
+#logoText {
+ position: absolute;
+ left: 50%;
+ margin-left: -55px;
+ font-weight: 500;
+ font-size: 24px;
+ line-height: 20px;
+ color: rgb(192, 93, 36);
+}
+
+.dropdown {
+position: absolute;
+left: 50%;
+top: 2%;
+}
+
+.btn-primary-dropdown-toggle {
+ width: 200px;
+ margin-left: -100px;
+ text-align: center;
+ font-size: 20px;
+}
+
+.dropdown-menu {
+ width: 200px;
+ margin-left: -100px;
+}
+
+.dropdownuser {
+position: absolute;
+right:10%;
+top: 2%;
+}
+
+.btn-primary-dropdown-toggle-user {
+ width: 160px;
+ text-align: center;
+ font-size: 20px;
+}
+
+#userDropDownStyle {
+ margin-left: 45px;
+ margin-top: -5px;
+ width: 160px;
+}
