@@ -67,8 +67,9 @@ const postProgramDataToDb = (incomingData) => {
       console.log('BLAH ========>>>>> : ', incomingData);
       if (err) throw err;
       var sql = `UPDATE movies SET title = '${incomingData.title}',
-      synopsis = '${incomingData.synopsis}',
       length = '${incomingData.length}',
+      lead_actor = '${incomingData.lead_actor}',
+      synopsis = '${incomingData.synopsis}',
       certificate = '${incomingData.certificate}',
       rating = '${incomingData.rating}',
       posterUrl = '${incomingData.poster}',
@@ -131,7 +132,13 @@ app.get('/admin', function (req, res) {
 
 app.post('/admin', function (req, res) {
   let data = req.body;
-  postProgramDataToDb(data);
+  postProgramDataToDb(data)
+
+  getProgramDataFromDb().then((result) => {
+    arrayOfProgramData = result;
+    return arrayOfProgramData;
+  })
+  
   res.sendFile(__dirname + '/adminControls.html');
 });
 
