@@ -3,6 +3,8 @@ $(document).ready(function(){
 
      $('.moviePanelClass').hide();
 
+     populateCarousel();
+
 /*       $( "#show-info-panel" ).mouseover(function() {
         $('.moviePanelClass').show();
         $( "#moviePanel" ).animate({
@@ -26,10 +28,9 @@ $(document).ready(function(){
         getFocusedInfo();
       });
 
-      // $("#carouselId").click(function() {
-      //   $(".moviePanelClass").slideUp();
-      // });
-
+      $("#carouselId").click(function() {
+       $(".moviePanelClass").slideUp();
+     });
 
         // Video
         var video = document.getElementById("video-player");
@@ -122,5 +123,13 @@ $(document).ready(function(){
         // Update the video volume
         video.volume = volumeBar.value;
       });
+
+      var elementForClick = document.getElementsByClassName("carousel-item thumbnail-item active")[0];
+
+      elementForClick.addEventListener("click", function() {
+        console.log('Video Player Should Open Now');
+        $('#videoModalContainer').css("display", "block");
+      });
+
 
     });
