@@ -361,14 +361,13 @@ width: 300px;
 
 #playOverlay {
   position: inherit;
-  width: 400px;
-  height: 300px;
+  width: 100px;
+  height: 100px;
   background-color: rgba(0, 0, 0, 0);
   top: 50%;
   left: 50%;
-  margin-left: -200px;
-  padding-left: 50px;
-  margin-top: -58px;
+  margin-left: -50px;
+  margin-top: 50px;
   z-index: 31;
   opacity: 0.7;
   background-image: url('images/circlePlaySprite.png');

@@ -75,7 +75,7 @@ if (typeof searchTerm === 'undefined') {
           var playButton = document.createElement("div");
           playButton.setAttribute("id", "playOverlay");
           playButton.setAttribute("class", "playButt");
-          
+
           imageForEachTile.setAttribute('src', each.poster);
           eachTile.setAttribute("class", "carousel-item thumbnail-item");
           eachTile.setAttribute("id", each.title);
