@@ -12,6 +12,39 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+const checkAdminData = (un, pw) => {
+
+  let userResult = false;
+  let pwResult = false;
+
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: securityId,
+    database: "sys"
+  });
+
+  return new Promise((resolve) => {
+    con.query('SELECT * FROM myAdmins', function (error, results, fields) {
+      if (error) throw error;
+
+      results.map((each) => {
+        if (each.AdminUsername == un) {
+          userResult = true;
+          if (each.AdminPassword == pw) {
+            pwResult = true;
+            console.log('pwResult TRUE:?> ', pwResult);
+            resolve(pwResult);
+          } else {
+            console.log('pwResult FALSE:?> ', pwResult);
+            resolve(false);
+          }
+        }
+      })
+    });
+  })
+}
+
 const checkUserData = (un, pw) => {
 
   let userResult = false;
@@ -138,28 +171,51 @@ app.get('/login', function (req, res) {
   res.sendFile(__dirname + '/public/loginForm.html');
 })
 
-// vv posting login info to database vv
+// vv post/check login info from myusers database vv
 app.post('/login', function (req, res) {
 
   let username = req.body.emailAddress;
-  console.log('USER: ', username);
+
   let password = req.body.password;
-  console.log('PW: ', password);
+
 
   checkUserData(username, password)
     .then((x) => {
-      console.log();
+
       if (x === false) {
-        console.log('x 1');
-        res.sendFile(__dirname + '/public/loginForm.html');
-        console.log('x 2');
+
+        res.send('FAIL');
+
       } else {
         res.sendFile(__dirname + '/public/index.html');
       }
     })
 });
-
 // ^^ posting login info to database ^^
+
+
+app.get('/adminLogin', function (req, res) {
+  res.sendFile(__dirname + '/public/adminLoginForm.html');
+})
+
+// vv post/check login info from myAdmins database vv
+app.post('/adminLogin', function (req, res) {
+
+  let adminUser = req.body.username;
+
+  let adminPassword = req.body.password;
+
+  checkAdminData(adminUser, adminPassword)
+    .then((x) => {
+
+      if (x === false) {
+        res.sendFile(__dirname + '/public/adminLoginForm.html');
+      } else {
+        res.sendFile(__dirname + '/public/adminControls.html');
+      }
+    })
+});
+// ^^ posting login info to MyAdmins database ^^
 
 // login page
 app.get('/register', function (req, res) {
@@ -175,9 +231,8 @@ app.get('/getdata', function(req, res) {
 })
 
 app.get('/admin', function (req, res) {
-  res.sendFile(__dirname + '/adminControls.html');
+  res.sendFile(__dirname + '/public/adminControls.html');
 })
-
 
 app.post('/admin', function (req, res) {
   let data = req.body;
