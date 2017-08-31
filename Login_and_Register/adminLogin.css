@@ -5,6 +5,29 @@ body {
     background-repeat: no-repeat;
 }
 
+.branding ul {
+list-style-type: none;
+ margin:0;
+ padding:0;
+ overflow:hidden;
+ font-size: 1.5em;
+ font-family: Sky Text, Helvetica, Ariel;
+}
+
+.branding li {
+    float: left;
+}
+
+.branding li img {
+    width: 400px;
+    position: absolute;
+    margin-left: 7%;
+    top: 2%;
+}
+
+
+
+/*
 ul {
  list-style-type: none;
  margin:0;
@@ -25,6 +48,7 @@ li img {
     margin-left: 10%;
     top: 2%;
 }
+*/
 
 #logoText {
  position: absolute;
