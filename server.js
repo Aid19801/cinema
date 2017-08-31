@@ -2,7 +2,7 @@ var express = require('express');
 var app = express();
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
-console.log('loaded');
+
 var securityId = require('./getData').securityId;
 let arrayOfProgramData = []
 
@@ -14,7 +14,8 @@ app.use(bodyParser.json())
 
 const checkUserData = (un, pw) => {
 
-let result = true;
+  let userResult = false;
+  let pwResult = false;
 
   var con = mysql.createConnection({
     host: "localhost",
@@ -26,19 +27,22 @@ let result = true;
   return new Promise((resolve) => {
     con.query('SELECT * FROM myusers', function (error, results, fields) {
       if (error) throw error;
-      results.map((each) => {
 
-        if ((each.email === un) && (each.password === pw)) {
-          console.log('MATCHED: ', each.email);
-          console.log('MATCHED: ', pw);
-          resolve(true);
-        } else {
-          resolve(false);
+      results.map((each) => {
+        if (each.email == un) {
+          userResult = true;
+          if (each.password == pw) {
+            pwResult = true;
+            console.log('pwResult TRUE:?> ', pwResult);
+            resolve(pwResult);
+          } else {
+            console.log('pwResult FALSE:?> ', pwResult);
+            resolve(false);
+          }
         }
       })
     });
   })
-
 }
 
 
@@ -144,10 +148,13 @@ app.post('/login', function (req, res) {
 
   checkUserData(username, password)
     .then((x) => {
+      console.log();
       if (x === false) {
-        res.sendFile(__dirname + '/public/index.html');
-      } else {
+        console.log('x 1');
         res.sendFile(__dirname + '/public/loginForm.html');
+        console.log('x 2');
+      } else {
+        res.sendFile(__dirname + '/public/index.html');
       }
     })
 });
@@ -160,7 +167,7 @@ app.get('/register', function (req, res) {
 })
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'public/index.html'));
+    res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
 app.get('/getdata', function(req, res) {
