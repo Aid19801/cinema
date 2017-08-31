@@ -1,0 +1,104 @@
+body {
+    background-image: url(2nfytvssbtjmlc6eyywwz88gald.jpg);
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 130%;
+
+}
+
+ul {
+ list-style-type: none;
+ margin:0;
+ padding:0;
+ overflow:hidden;
+ font-size: 1.5em;
+ font-family: sans-serif;
+}
+
+li {
+ float:left;
+
+}
+
+li img {
+ width: 400px;
+    position: absolute;
+    left: 5%;
+}
+
+
+
+.registerContainer {
+    left: 38%;
+    top: 22.5%;
+    position: absolute;
+    width: 20em;
+}
+
+
+.registerTitle {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+
+#loginHere {
+    font-family: sans-serif;
+    color: white;
+    text-align: center;
+}
+
+p a:hover {
+    text-decoration: underline;
+}
+
+p a:link {
+    text-decoration: underline;
+    color: white;
+}
+
+p a:visited {
+    color: white;
+}
+
+
+
+
+[type=text]{
+    display: block;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+
+}
+
+[type=email]{
+    display: block;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+}
+
+[type=password]{
+    display: block;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    width: 100%;
+
+}
+[type=button]{
+    display: block;
+    border: 0px;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: #aeb5bc;
+    color:#f7f7f7;
+    width: 150px;
+    position: absolute;
+    left: 27%;
+}

@@ -1,3 +1,3 @@
 module.exports = {
-  securityId: 'Gr8dAc8d'
+  securityId: 'T$hompsin12'
 }

@@ -30,14 +30,15 @@
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <!-- Import Materialize scripts -->
     <script type="text/javascript" src="materialize/js/materialize.min.js"></script>
-    <script type="text/javascript" src="carousel-page-lower.js"></script>
     <!--Import carousel-page-lower.js -->
+    <script type="text/javascript" src="carousel-page-lower.js"></script>
 
     <!-- Compiled and minified CSS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/js/materialize.min.js"></script>
     <!-- <script type="text/javascript" src="logic.js"> -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.1/css/materialize.min.css">
 
+<div id="playOverlayChris"></div>
 <div id="container">
   <div id="page-header" style="height: 200px;">
 
@@ -90,6 +91,7 @@
   <div id="chevron-rt"><img src="images/dbl_chevron_rt.png"></div>
 
   <div id="carouselId" class="carousel" onclick="setTimeout(getFocusedInfo, 1600)">
+
       <!-- ========= put carousel items here ========= -->
   </div>
 
@@ -193,7 +195,38 @@ Category: <span id= "category"></span></span><br><br>
 <span id="copyright">© 2017 Sky UK</span>
     </div> -->
 
+    <!-- Video Player -->
+ <div id="videoModalContainer">
+    <div id="video-container">
+
+<!-- videos/avengers_assemble.mov -->
+      <video id="video-player" width="640" height="365">
+        <source src="" type="video/mov">
+        <source src="" type="video/ogv">
+        <source src="" type="video/mp4">
+
+        <p>
+          Your browser doesn't support HTML5 video.
+          <a href="">Download</a> the video instead.
+        </p>
+      </video>
+
+      <!-- Video Controls -->
+
+      <div id="video-player-controls">
+        <button type="button" id="play-pause">Play</button>
+        <input type="range" id="seek-bar" value="0">
+        <button type="button" id="mute">Mute</button>
+        <input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1">
+        <button type="button" id="full-screen">Full-Screen</button>
+      </div>
+
+    </div>
+  </div>
+</div>
+
     <script type="text/javascript" src="logic.js"></script>
+    <script type="text/javascript" src="videoPlayerScript.js"></script>
 
 
   </body>
