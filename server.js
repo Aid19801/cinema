@@ -243,7 +243,7 @@ app.post('/admin', function (req, res) {
     return arrayOfProgramData;
   })
 
-  res.sendFile(__dirname + '/adminControls.html');
+  res.sendFile(__dirname + '/public/adminControls.html');
 });
 
 app.listen(3000);

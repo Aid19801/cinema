@@ -55,6 +55,7 @@ if (typeof searchTerm === 'undefined') {
 } else {
         // as soon as you type, you nuke the existing html.
         $('#carouselId').html('');
+
         // function that filters api down to relevant objects/results
         function checkWords(st, arr) {
             let term = st.toLowerCase();
@@ -75,7 +76,7 @@ if (typeof searchTerm === 'undefined') {
           var playButton = document.createElement("div");
           playButton.setAttribute("id", "playOverlay");
           playButton.setAttribute("class", "playButt");
-          
+
           imageForEachTile.setAttribute('src', each.poster);
           eachTile.setAttribute("class", "carousel-item thumbnail-item");
           eachTile.setAttribute("id", each.title);
@@ -91,18 +92,25 @@ if (typeof searchTerm === 'undefined') {
           eachTile.setAttribute("data-prog-actor", each.lead_actor);
           eachTile.setAttribute("data-prog-synopsis", each.synopsis);
           eachTile.setAttribute("data-prog-link", each.progLink);
-      //continuation of carousel population
+        // continuation of carousel population
           eachTile.innerHTML = each.title + "<br>";
           eachTile.appendChild(imageForEachTile);
-          imageForEachTile.appendChild(playButton);
+          eachTile.appendChild(playButton);
           newWrapper.appendChild(eachTile);
+
         })
         // newWrapper logs out correct info
 
         $(wrapper).html(newWrapper);
-        // ^^ html is assigned correctly, inspect-element shows
-        // correct results in place, but no results on screen.
+
         $('.carousel').carousel();
+
+        $(".playButt").click(() => {
+          var videoLinkForPlayer = $('.active')[0].getAttribute('data-prog-link');
+          $('#video-player').attr('src', 'videos/' + videoLinkForPlayer);
+          $('#videoModalContainer').show();
+        });
+
         setTimeout(function () {
             getFocusedInfo();
         }, 250);
