@@ -106,7 +106,7 @@ app.get('/login', function (req, res) {
 
 // login page
 app.get('/register', function (req, res) {
-  res.sendFile(__dirname + '/public/loginForm.html');
+  res.sendFile(__dirname + '/public/regForm.html');
 })
 
 app.get('/', function(req, res) {
