@@ -25,27 +25,8 @@
 <!-- THE LOGO  -->
      <div id="page-header" style="height: 200px;">
      <div class="logo">
-       <img src="logo.png" alt="Sky Video On Demand" height="auto" width="350px"><br>
+       <img src="skyVideoOnDemand.png" alt="Sky Video On Demand" height="auto" width="350px"><br>
      </div>
-
-<!-- THE FILTER DROP DOWN -->
-     <div class="dropdown">
-     <button class="btn-primary-dropdown-toggle"
-     type="button" data-toggle="dropdown">Filter Movies &amp; TV
-     <span class="caret"></span> </button>
-     <ul class="dropdown-menu">
-       <li><a href="#">TV</a></li>
-       <li><a href="#">Film</a></li>
-       <li><a href="#">Action &amp; Adventure</a></li>
-       <li><a href="#">Romance</a></li>
-       <li><a href="#">Adventure</a></li>
-       <li><a href="#">Sci-fi</a></li>
-       <li><a href="#">Kids/Family</a></li>
-       <li><a href="#">Horror</a></li>
-     </ul>
-    </div>
-  </div>
-
 
 <!-- THE USER DROPDOWN -->
     <div class="dropdownuser">
@@ -54,19 +35,88 @@
     type="button" data-toggle="dropdown">User Options<span class="caret"></span></button>
     <ul class="dropdown-menu" id="userDropDownStyle">
       <!-- when you log out, it takes you back to the splash page -->
-     <li><a href="#">Log Out</a></li>
+     <li><a href="file:///Users/sum19/Desktop/project/cinema/accountspage/splashPage.html">Log Out</a></li>
     </ul>
      </div>
 
 <!-- THE PANELS  -->
+
+<!-- ACCOUNT DETAILS - RIGHT PANEL  -->
   <div class="accountshape">
     <span id ="account"> Account Details </span>
-    <br>  Full Name: &nbsp; <input type="text" id="namebox" name="fname"><br>
-    Email: &nbsp; <input type="text" id="emailbox" name="email"><br>
-    Password:  &nbsp; <input type="text" id="pwbox" name="pw"><br>
-    <span id="save"> <button type="button" style="height: 65px; width:110px" >Save</button> </span>
+    <br>
+     First Name: &nbsp; <span id ="firstname"> Safirah <br> </span>
+    Last Name: &nbsp; <span id ="lastname"> Umarji <br></span>
+     Email: &nbsp; <span id ="email"> safirahu@email.com <br></span>
+    Password:   &nbsp; <span id ="password"> ********* <br> </span>
+    <span id="edit"> <button type="button"
+      style="height: 65px; width:110px"
+      onclick="showEditbox()">Edit</button> </span>
   </div>
 
+  <!-- onload - hides the pop up edit box -->
+  <script>
+ $(document).ready(function() {
+  $('.editbox').hide();
+ });
+ </script>
+
+<!-- reveals the pop up edit box  -->
+ <script>
+ function showEditbox() {
+     div = document.getElementById('editbox');
+     div.style.display = "block";
+ }
+ </script>
+
+<!-- EDIT ACCOUNT DETAILS POP UP BOX  -->
+  <div class="editbox" id="editbox">
+  <span id="box">  First name: &nbsp;&nbsp;
+    <span> <input type="text" name="fn" value=""
+    maxlength="40" size="40" id="fn">
+    <br><br> </span>
+    Last name:  &nbsp;&nbsp;
+    <span> <input type="text" name="ln" value=""
+    maxlength="40" size="40" id="ln">
+    <br><br> </span>
+    Email: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <span> <input type="text" name="em" value=""
+    maxlength="40" size="40" id="em">
+    <br><br></span>
+    Password:&nbsp;&nbsp;&nbsp;&nbsp;
+    <span> <input type="text" name="pw" value=""
+    maxlength="40" size="40" id="pw">
+    <br><br> </span> </span>
+    <span id="savedetails"> <button type="button"
+      style="height: 65px; width:110px"
+      onclick="returndetails()">Save Details</button> </span>
+    </span>
+    <button class="exit">Close</button>
+  </div>
+
+  <script>
+  $(document).ready(function(){
+      $(".exit").click(function(){
+          $(".editbox").hide();
+      });
+  });
+  </script>
+
+<!-- SAVE THE DETAILS - REPLACES ID in account details box  -->
+  <script>
+  function returndetails() {
+      var x = document.getElementById("fn").value;
+      document.getElementById("firstname").innerHTML = x + "<br>";
+      var y = document.getElementById("ln").value;
+      document.getElementById("lastname").innerHTML = y + "<br>";
+      var z = document.getElementById("em").value;
+      document.getElementById("email").innerHTML =  z + "<br>";
+      var w = document.getElementById("pw").value;
+      document.getElementById("password").innerHTML = w + "<br>";
+  }
+  </script>
+
+<!-- SUBSCRIPTION BOX  -->
   <div class="rightbox">
   <span id="sub" >  Subscription <br> </span>
   <span id="demo"> </span>
@@ -106,7 +156,6 @@
 function showDiv() {
     div = document.getElementById('popup');
     div.style.display = "block";
-
 }
 </script>
 
@@ -126,9 +175,6 @@ $(document).ready(function(){
     });
 });
 </script>
-
-
-
 
 
 <div id="footer">
@@ -204,7 +250,13 @@ $(document).ready(function(){
 
 
 
-
+    <!-- <div class="accountshape">
+      <span id ="account"> Account Details </span>
+      <br>  Full Name: &nbsp; <input type="text" id="namebox" name="fname"><br>
+      Email: &nbsp; <input type="text" id="emailbox" name="email"><br>
+      Password:  &nbsp; <input type="password" id="pwbox" name="pw"><br>
+      <span id="save"> <button type="button" style="height: 65px; width:110px" >Save</button> </span>
+    </div> -->
 
 
 

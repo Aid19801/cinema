@@ -1,3 +1,47 @@
+#savedetails {
+position: absolute;
+top: 88%;
+left: 40%;
+color: black;
+font-size: 20px;
+line-height: 25px;
+}
+
+.editbox{
+  position: relative;
+  bottom: 80%;
+left: 30%;
+  background-color: grey;
+  width: 650px;
+  height: 640px;
+  line-height: 60px;
+  color: black;
+  font-family: Sky Text, helvetica, arial;
+  font-size: 20px;
+}
+
+/*edit button on account details panel*/
+#edit {
+
+  position: fixed;
+  left: 29%;;
+  bottom: 30%;
+    font-size: 28px;
+      font-family: Sky Text, helvetica, arial;
+}
+
+.exit {
+
+  position: relative;
+  bottom: 77%;
+  left: 90%;
+}
+#box {
+position: relative;
+top: 13%;
+left: 11%; }
+
+
 #wrapper {
 margin-left: auto;
 margin-right: auto;
@@ -7,63 +51,31 @@ height: 1000px;
 }
 .accountshape {
   position: relative;
-  text-align: left;
+  text-align: center;
   background-color: orange;
   width: 400px;
-  height: 340px;
+  height: 380px;
   line-height: 60px;
   color: Black;
 left: 20%;
-top:15%;
+top: 120%;
   font-family: Sky Text, helvetica, arial;
 }
 /*'account details'*/
 #account {
   position: relative;
-  left: 18%;
   font-family: Sky Text, helvetica, arial;
   font-size: 36px;
 }
-/*'full name'*/
-#namebox {
-  position: relative;
-height: 20px;
-width: 250px;
-}
-
-/*'email'*/
-#emailbox {
-  position: relative;
-height: 20px;
-width: 280px;
-}
-
-/*'password'*/
-#pwbox {
-  position: relative;
-height: 20px;
-width: 250px;
-}
-
-/*left - 'save button'*/
-#save {
-
-  position: relative;
-  left: 38%;
-  top: 5%;
-    font-size: 28px;
-      font-family: Sky Text, helvetica, arial;
-}
-
 
 .rightbox{
-  position: absolute;
-top: 23.1%;
+  position: relative;
+bottom: 70%;
   left: 50%;
   text-align: left;
   background-color: orange;
   width: 400px;
-  height: 340px;
+  height: 380px;
   line-height: 60px;
   color: Black;
   font-family: Sky Text, helvetica, arial;
@@ -115,6 +127,7 @@ right: 30%;
   font-size: 30px;
 }
 
+
 #myselect {
 margin-left: 185px;
 margin-top: 60px;
@@ -138,6 +151,8 @@ color: black;
 font-size: 20px;
 line-height: 25px;
 }
+
+
 
 /*your plan */
 #demo {
@@ -167,3 +182,18 @@ font-family: Sky Text, helvetica, arial;
       font-family: Sky Text, helvetica, arial;
       line-height: 33px;
 }
+
+
+
+/*.edit {
+  position: relative;
+  bottom: 10%;
+right: 30%;
+  background-color: grey;
+  width: 650px;
+  height: 640px;
+  line-height: 60px;
+  color: black;
+  font-family: Sky Text, helvetica, arial;
+  font-size: 30px;
+}*/
