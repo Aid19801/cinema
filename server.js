@@ -12,6 +12,36 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+const checkUserData = (un, pw) => {
+
+let result = true;
+
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: securityId,
+    database: "sys"
+  });
+
+  return new Promise((resolve) => {
+    con.query('SELECT * FROM myusers', function (error, results, fields) {
+      if (error) throw error;
+      results.map((each) => {
+
+        if ((each.email === un) && (each.password === pw)) {
+          console.log('MATCHED: ', each.email);
+          console.log('MATCHED: ', pw);
+          resolve(true);
+        } else {
+          resolve(false);
+        }
+      })
+    });
+  })
+
+}
+
+
 const getProgramDataFromDb = () => {
 
   let arr = [];
@@ -94,7 +124,7 @@ getProgramDataFromDb().then((result) => {
 
 app.use(express.static(__dirname + '/public'));
 
-// login page
+// splash page
 app.get('/splash', function (req, res) {
   res.sendFile(__dirname + '/public/splashPage.html');
 })
@@ -103,6 +133,26 @@ app.get('/splash', function (req, res) {
 app.get('/login', function (req, res) {
   res.sendFile(__dirname + '/public/loginForm.html');
 })
+
+// vv posting login info to database vv
+app.post('/login', function (req, res) {
+
+  let username = req.body.emailAddress;
+  console.log('USER: ', username);
+  let password = req.body.password;
+  console.log('PW: ', password);
+
+  checkUserData(username, password)
+    .then((x) => {
+      if (x === false) {
+        res.sendFile(__dirname + '/public/index.html');
+      } else {
+        res.sendFile(__dirname + '/public/loginForm.html');
+      }
+    })
+});
+
+// ^^ posting login info to database ^^
 
 // login page
 app.get('/register', function (req, res) {

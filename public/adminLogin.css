@@ -1,5 +1,6 @@
 body {
-    background-image: url(darth_vader_armor_star_wars_film_hat_snow_93645_1920x1080.jpg);
+    background-image: url(Better-Call-Saul-TV-show-on-AMC-season-2.jpg);
+    background-size: cover;
     overflow: hidden;
     background-repeat: no-repeat;
 }
@@ -70,6 +71,16 @@ p a:link {
 p a:visited {
     color: white;
 }
+
+[type=text] {
+    font-family: sans-serif;
+    color: grey;
+    padding: 10px;
+    border-radius: 5px;
+    display: block;
+    width: 100%;
+}
+
 
 [type=email] {
     font-family: sans-serif;

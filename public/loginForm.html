@@ -7,25 +7,29 @@
 
     <body>
 
+        <div class="branding">
         <ul>
-           <li><a href="index.html"><img src="sky_video_on_white_2.png" href="index.html"></a> </li>
+           <li><a href="index.html"><img src="skyVideoOnDemand.png" href="index.html"></a> </li>
+            <li><p>To Login as an Administrator<br> click <a href="adminLoginForm.html"><span>here</span></a></p></li>
         </ul>
+            </div>
 
-        <p id="logoText">ON DEMAND</p>
+
+
 
         <div class="loginContainer">
-            <form action="login.php" method="post">
+            <form action="/login" method="post">
                 <div id="loginTitle"><h1>Login</h1></div><br>
 
-                <input type="email" name="email-address" placeholder="Email Address">
+                <input type="email" name="emailAddress" placeholder="Email Address" value="ade@ade.com">
                 <br>
-                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="password" placeholder="Password" value="Ade1" required>
                 <br>
 
                 <input id="submit-button" type="submit" value="Submit">
                 <br>
                 <br>
-                <p id="regHere">Not Registered?<br>Register <a href="register">here</a></p>
+                <p id="regHere">Not Registered?<br>Register <a href="regForm.html">here</a></p>
             </form>
         </div>
 
