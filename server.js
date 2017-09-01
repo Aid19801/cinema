@@ -78,7 +78,6 @@ const checkUserData = (un, pw) => {
   })
 }
 
-
 const getProgramDataFromDb = () => {
 
   let arr = [];
@@ -153,6 +152,32 @@ const postProgramDataToDb = (incomingData) => {
   })
 }
 
+const postUserDataToDB = (first, last, email, pw) => {
+
+  var con = mysql.createConnection({
+    host: "localhost",
+    user: "root",
+    password: securityId,
+    database: "sys"
+  });
+
+  return new Promise((resolve) => {
+
+    con.connect(function(err) {
+
+      if (err) throw err;
+      var sql = `INSERT INTO myusers (firstname, lastname, email, password) VALUES ('${first}', '${last}', '${email}', '${pw}')`;
+
+      con.query(sql, function (err, result) {
+        if (err) throw err;
+        console.log(result.affectedRows + " record(s) updated");
+        resolve(true);
+      });
+
+    });
+  })
+}
+
 getProgramDataFromDb().then((result) => {
   arrayOfProgramData = result;
   return arrayOfProgramData;
@@ -166,12 +191,12 @@ app.get('/splash', function (req, res) {
   res.sendFile(__dirname + '/public/splashPage.html');
 })
 
-// login page
+// get login page
 app.get('/login', function (req, res) {
   res.sendFile(__dirname + '/public/loginForm.html');
 })
 
-// vv post/check login info from myusers database vv
+// vv post login/check login info from myusers database vv
 app.post('/login', function (req, res) {
 
   let username = req.body.emailAddress;
@@ -217,10 +242,42 @@ app.post('/adminLogin', function (req, res) {
 });
 // ^^ posting login info to MyAdmins database ^^
 
-// login page
+// get register page
 app.get('/register', function (req, res) {
   res.sendFile(__dirname + '/public/regForm.html');
 })
+
+// post register page data
+app.post('/register', function (req, res) {
+  let x = req.body;
+
+  let firstname = x.firstname;
+  let lastname = x.lastname;
+  let emailAddress = x.emailAddress;
+  let confEmail = x.ConfEmail;
+  let password = x.password;
+  let confirmPassword = x.ConfirmPassword;
+
+
+  postUserDataToDB(firstname, lastname, emailAddress, password)
+    .then((bool) => {
+      console.log('true? ', bool);
+    })
+
+  res.sendFile(__dirname + '/public/loginForm.html');
+
+  // checkAdminData(adminUser, adminPassword)
+  //   .then((x) => {
+  //
+  //     if (x === false) {
+  //       res.sendFile(__dirname + '/public/adminLoginForm.html');
+  //     } else {
+  //       res.sendFile(__dirname + '/public/adminControls.html');
+  //     }
+  //   })
+});
+
+
 
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'));

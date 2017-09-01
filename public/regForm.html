@@ -13,24 +13,26 @@
 
 
         <div class="registerContainer">
-            <form name="signup" method="post" action="upload.php">
+
+            <form name="signup" method="POST" action="/register">
                 <div class="registerTitle"><h1>Register</h1></div>
                 <input type="text" name="firstname" placeholder="First Name">
                 <br>
                 <input type="text" name="lastname" placeholder="Last Name">
                 <br>
-                <input type="text" name="email-address" placeholder="Email Address">
+                <input type="text" name="emailAddress" placeholder="Email Address">
                 <br>
                 <input type="text" name="ConfEmail" placeholder="Confirm Email Address">
                 <br>
-                <input type="password" name="password" placeholder="Password">
+                <input type="password" name="password" placeholder="Password" value="Hello1">
                 <br>
-                <input type="password" name="Confirm Password" placeholder="Confirm Password">
+                <input type="password" name="ConfirmPassword" placeholder="Confirm Password" value="Hello1">
                 <br>
                 <input type="button" value="Submit" onclick="nameCheck();emailCheck();CheckP()">
                 <br><br>
                 <p id="loginHere">Already registered? <br>Login <a href="login">here</a></p>
             </form>
+
         </div>
 
     </body>

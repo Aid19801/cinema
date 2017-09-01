@@ -37,10 +37,9 @@ $(document).ready(function(){
      $(".playButt").click(() => {
 
        var videoLinkForPlayer = $('.active')[0].getAttribute('data-prog-link');
-       console.log('vidLink? : ', videoLinkForPlayer);
 
        $('#video-player').attr('src', 'videos/' + videoLinkForPlayer);
-       
+
        $('#videoModalContainer').show();
       //  $('#video-player').load();
 
@@ -53,7 +52,14 @@ $(document).ready(function(){
 
     $(document).keyup(function(e) {
       if (e.keyCode === 13) $('#videoModalContainer').hide();     // enter
-      if (e.keyCode === 27) $('#videoModalContainer').hide();     // esc
+      if (e.keyCode === 27) {
+        console.log('1');
+        $('#play-pause').click();
+        console.log('2');
+        $('#videoModalContainer').hide();
+        console.log('3');
+      }     // esc
+
     });
 
 
