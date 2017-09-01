@@ -266,15 +266,6 @@ app.post('/register', function (req, res) {
 
   res.sendFile(__dirname + '/public/loginForm.html');
 
-  // checkAdminData(adminUser, adminPassword)
-  //   .then((x) => {
-  //
-  //     if (x === false) {
-  //       res.sendFile(__dirname + '/public/adminLoginForm.html');
-  //     } else {
-  //       res.sendFile(__dirname + '/public/adminControls.html');
-  //     }
-  //   })
 });
 
 
@@ -289,6 +280,9 @@ app.get('/getdata', function(req, res) {
 
 app.get('/admin', function (req, res) {
   res.sendFile(__dirname + '/public/adminControls.html');
+})
+app.get('/accounts', function (req, res) {
+  res.sendFile(__dirname + '/accountspage.html');
 })
 
 app.post('/admin', function (req, res) {
