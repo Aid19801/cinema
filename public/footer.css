@@ -1,0 +1,98 @@
+
+#footer {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  height: 450px;
+  bottom: 0px;
+  left: 0px;
+  padding-top: 12px !important;
+  background-color: rgba(244,244,244,1) !important;
+}
+
+#footer-table {
+  position: relative;
+  margin-left: 15% !important;
+  width: 70% !important;
+}
+
+.footer-table-header {
+  line-height: 1px !important;
+  height: 30px !important;
+  font-family: Sky Text, Helvetica, Arial !important;
+  font-size: 24px !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+
+.footer-table-body {
+  line-height: 5px !important;
+  height: 30px !important;
+  font-family: Sky Text, Helvetica, Arial !important;
+  font-size: 14px !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+.footer-table-body a:link {
+  text-decoration: none !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+.footer-table-body a:visited {
+  text-decoration: none !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+.footer-table-body a:hover {
+  text-decoration: underline !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+
+.footer-table-body:link {
+  height: 30px !important;
+  font-family: Sky Text, Helvetica, Arial !important;
+  font-size: 14px !important;
+  text-decoration: none !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+.footer-terms-body a:link {
+  text-decoration: none !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+.footer-terms-body a:visited {
+  text-decoration: none !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+.footer-terms-body a:hover {
+  text-decoration: underline !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+
+#horizontal-line{
+  width: 70%;
+}
+
+#footer-terms {
+  margin-left: 15% !important;
+  width: 50% !important;
+}
+
+.footer-terms-body {
+  height: 50px !important;
+  font-family: Sky Text, Helvetica, Arial !important;
+  font-size: 14px !important;
+  color: rgba(102, 102, 102, 1) !important;
+}
+
+#sky-logo-sprite {
+  margin-left: 15%;
+  width: 75px;
+}
+
+#copyright {
+  font-family: Sky Text, Helvetica, Arial;
+  font-size: 14px;
+  color: rgba(102, 102, 102, 1);
+}
+
+.thumbnail-item {
+  width: 500px !important;
+  top: 50% !important;
+  margin-top: -250px !important;
+}

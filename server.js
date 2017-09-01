@@ -281,8 +281,9 @@ app.get('/getdata', function(req, res) {
 app.get('/admin', function (req, res) {
   res.sendFile(__dirname + '/public/adminControls.html');
 })
+
 app.get('/accounts', function (req, res) {
-  res.sendFile(__dirname + '/accountspage.html');
+  res.sendFile(__dirname + '/public/accountspage.html');
 })
 
 app.post('/admin', function (req, res) {
