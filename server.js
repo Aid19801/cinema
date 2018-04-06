@@ -3,7 +3,7 @@ var app = express();
 var mysql = require('mysql');
 var bodyParser = require('body-parser');
 
-var securityId = require('./getData').securityId;
+var securityId = require('./getData').securityId; // Your Root Password Here //  
 let arrayOfProgramData = []
 
 // parse application/x-www-form-urlencoded
@@ -12,6 +12,7 @@ app.use(bodyParser.urlencoded({ extended: false }))
 // parse application/json
 app.use(bodyParser.json())
 
+// USER ACCOUNT INFO | Adminstrator Credentials Check
 const checkAdminData = (un, pw) => {
 
   let userResult = false;
@@ -45,6 +46,7 @@ const checkAdminData = (un, pw) => {
   })
 }
 
+// USER ACCOUNT INFO | User Credentials Check
 const checkUserData = (un, pw) => {
 
   let userResult = false;
@@ -78,6 +80,7 @@ const checkUserData = (un, pw) => {
   })
 }
 
+// PROGRAM DATA INFO | taking data in from MySQL database
 const getProgramDataFromDb = () => {
 
   let arr = [];
@@ -94,6 +97,9 @@ const getProgramDataFromDb = () => {
       if (error) throw error;
 
       results.map((each) => {
+        // takes everything from the movies DB
+        // creates a new object for every row
+        // And then pushes that object into an array.
 
         var newProgramObject = {
           id: each.id,
@@ -118,6 +124,8 @@ const getProgramDataFromDb = () => {
   })
 }
 
+// PROGRAM DATA INFO | takes data from admin section
+// posts to MySQL database.
 const postProgramDataToDb = (incomingData) => {
 
   var con = mysql.createConnection({
@@ -152,6 +160,7 @@ const postProgramDataToDb = (incomingData) => {
   })
 }
 
+// USER ACCOUNT INFO | creates new user account
 const postUserDataToDB = (first, last, email, pw) => {
 
   var con = mysql.createConnection({
@@ -183,26 +192,28 @@ getProgramDataFromDb().then((result) => {
   return arrayOfProgramData;
 })
 
-
+// assigns the default file for static files.
 app.use(express.static(__dirname + '/public'));
+
+
+// ROUTING | in order of user journey
 
 // splash page
 app.get('/splash', function (req, res) {
   res.sendFile(__dirname + '/public/splashPage.html');
 })
 
-// get login page
+// login page | GET
 app.get('/login', function (req, res) {
   res.sendFile(__dirname + '/public/loginForm.html');
 })
 
-// vv post login/check login info from myusers database vv
+// login page | POST
 app.post('/login', function (req, res) {
 
   let username = req.body.emailAddress;
 
   let password = req.body.password;
-
 
   checkUserData(username, password)
     .then((x) => {
@@ -216,14 +227,13 @@ app.post('/login', function (req, res) {
       }
     })
 });
-// ^^ posting login info to database ^^
 
-
+// admin login page
 app.get('/adminLogin', function (req, res) {
   res.sendFile(__dirname + '/public/adminLoginForm.html');
 })
 
-// vv post/check login info from myAdmins database vv
+// post/check login info from myAdmins database
 app.post('/adminLogin', function (req, res) {
 
   let adminUser = req.body.username;
@@ -240,7 +250,6 @@ app.post('/adminLogin', function (req, res) {
       }
     })
 });
-// ^^ posting login info to MyAdmins database ^^
 
 // get register page
 app.get('/register', function (req, res) {
@@ -268,24 +277,28 @@ app.post('/register', function (req, res) {
 
 });
 
-
-
+// main app page
 app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname, '/public/index.html'));
 });
 
+// api route so we could pass back end data
+// to the front end via an AJAX/fetch request.
 app.get('/getdata', function(req, res) {
   res.send(JSON.stringify(arrayOfProgramData));
 })
 
+// admin section
 app.get('/admin', function (req, res) {
   res.sendFile(__dirname + '/public/adminControls.html');
 })
 
+// Sky packages/accounts page
 app.get('/accounts', function (req, res) {
   res.sendFile(__dirname + '/public/accountspage.html');
 })
 
+// posting catalog changes to admin page
 app.post('/admin', function (req, res) {
   let data = req.body;
   postProgramDataToDb(data)

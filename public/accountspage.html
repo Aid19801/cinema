@@ -3,29 +3,29 @@
 <head>
 
   <meta charset="utf-8">
-  <!-- Bootstrap is mobile first - responsive to mobile devices.
-  To ensure proper rendering and touch zooming this is important -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+
   <!-- width - this sets the width of the page to follow the screen-width of the device
   initial - this is the zoom level when the page is first loaded  -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <!-- Latest compiled and minified CSS -->
-
+  <!-- Latest compiled and minified CSS  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-<link rel="stylesheet" type="text/css" href="accountspage.css">
-<link rel="stylesheet" type="text/css" href="panels.css">
-<link rel="stylesheet" type="text/css" href="footer.css">
+  <!-- pulling in specific / non-bootstrap styling -->
+  <link rel="stylesheet" type="text/css" href="accountspage.css">
+  <link rel="stylesheet" type="text/css" href="panels.css">
+  <link rel="stylesheet" type="text/css" href="footer.css">
 
 <body>
-
 
 <!-- THE LOGO  -->
      <div id="page-header" style="height: 200px;">
      <div class="logo">
+     <a href="/">
        <img src="skyVideoOnDemand.png" alt="Sky Video On Demand" height="auto" width="350px"><br>
+     </a>
      </div>
 
 <!-- THE USER DROPDOWN -->
@@ -45,10 +45,10 @@
   <div class="accountshape">
     <span id ="account"> Account Details </span>
     <br>
-     First Name: &nbsp; <span id ="firstname"> Safirah <br> </span>
-    Last Name: &nbsp; <span id ="lastname"> Umarji <br></span>
-     Email: &nbsp; <span id ="email"> safirahu@email.com <br></span>
-    Password:   &nbsp; <span id ="password"> ********* <br> </span>
+     First Name: &nbsp; <span id ="firstname"> Sam <br> </span>
+    Last Name: &nbsp; <span id ="lastname"> Anderson <br></span>
+     Email: &nbsp; <span id ="email"> sam@keanu.com <br></span>
+    Password:   &nbsp; <span id ="password"> ****** <br> </span>
     <span id="edit"> <button type="button"
       style="height: 65px; width:110px"
       onclick="showEditbox()">Edit</button> </span>
